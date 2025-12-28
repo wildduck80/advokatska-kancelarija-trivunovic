@@ -1,0 +1,14 @@
+# robots.txt for Trivunovic Law Firm
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://trifunovic-law.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Block access to specific files/folders (if any)
+Disallow: /api/
+Disallow: /*.json$
