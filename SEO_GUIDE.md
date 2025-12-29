@@ -2,12 +2,12 @@
 
 This document explains the SEO enhancements implemented for Trivunovic Law Firm website.
 
-## ✅ Implemented SEO Features
+## Implemented SEO Features
 
 ### 1. **Meta Tags & Open Graph**
-- ✅ Dynamic title and description based on language (Serbian/English)
-- ✅ Keywords optimized for local search ("advokat futog", "advokatska kancelarija novi sad")
-- ✅ Open Graph tags for social media sharing (Facebook, LinkedIn)
+- Dynamic title and description based on language (Serbian/English)
+- Keywords optimized for local search ("advokat futog", "advokatska kancelarija novi sad")
+- Open Graph tags for social media sharing (Facebook, LinkedIn)
 - ✅ Twitter Card tags for Twitter sharing
 - ✅ Canonical URL to prevent duplicate content issues
 - ✅ Language alternates (hreflang) for multilingual SEO
