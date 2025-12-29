@@ -8,185 +8,189 @@ const SEO = () => {
 
   // Structured Data: Organization
   const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "LegalService",
-    "@id": `${siteUrl}/#organization`,
-    "name": t.company.name,
-    "url": siteUrl,
-    "logo": `${siteUrl}/logo.png`,
-    "image": `${siteUrl}/og-image.jpg`,
-    "description": lang === 'sr'
-      ? "Advokatska kancelarija Trivunovic pruža vrhunske pravne usluge u Futog-u.Specijalizovani smo za građansko, krivično, porodično i radno pravo."
-      : "Trivunovic Law Firm provides top-quality legal services in Futog. We specialize in civil, criminal, family, and labor law.",
-    "telephone": t.company.phone,
-    "email": t.company.email,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rade Kondića 116a",
-      "addressLocality": "Futog",
-      "postalCode": "21410",
-      "addressCountry": "RS"
+    '@context': 'https://schema.org',
+    '@type': 'LegalService',
+    '@id': `${siteUrl}/#organization`,
+    name: t.company.name,
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    image: `${siteUrl}/og-image.jpg`,
+    description:
+      lang === 'sr'
+        ? 'Advokatska kancelarija Trivunovic pruža vrhunske pravne usluge u Futog-u.Specijalizovani smo za građansko, krivično, porodično i radno pravo.'
+        : 'Trivunovic Law Firm provides top-quality legal services in Futog. We specialize in civil, criminal, family, and labor law.',
+    telephone: t.company.phone,
+    email: t.company.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rade Kondića 116a',
+      addressLocality: 'Futog',
+      postalCode: '21410',
+      addressCountry: 'RS',
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 45.242287,
-      "longitude": 19.718783
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 45.242287,
+      longitude: 19.718783,
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "08:00",
-      "closes": "16:00"
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '16:00',
     },
-    "priceRange": "$$",
-    "areaServed": [
-      { "@type": "City", "name": "Futog" },
-      { "@type": "City", "name": "Novi Sad" },
-      { "@type": "AdministrativeArea", "name": "Vojvodina" },
-      { "@type": "Country", "name": "Serbia" }
+    priceRange: '$$',
+    areaServed: [
+      { '@type': 'City', name: 'Futog' },
+      { '@type': 'City', name: 'Novi Sad' },
+      { '@type': 'AdministrativeArea', name: 'Vojvodina' },
+      { '@type': 'Country', name: 'Serbia' },
     ],
-    "sameAs": [
+    sameAs: [
       // Add social media links when available
-    ]
+    ],
   };
 
   // Structured Data: Local Business
   const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "Attorney",
-    "@id": `${siteUrl}/#localbusiness`,
-    "name": t.company.name,
-    "image": `${siteUrl}/og-image.jpg`,
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rade Kondića 116a",
-      "addressLocality": "Futog",
-      "addressRegion": "Vojvodina",
-      "postalCode": "21410",
-      "addressCountry": "RS"
+    '@context': 'https://schema.org',
+    '@type': 'Attorney',
+    '@id': `${siteUrl}/#localbusiness`,
+    name: t.company.name,
+    image: `${siteUrl}/og-image.jpg`,
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rade Kondića 116a',
+      addressLocality: 'Futog',
+      addressRegion: 'Vojvodina',
+      postalCode: '21410',
+      addressCountry: 'RS',
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 45.242287,
-      "longitude": 19.718783
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 45.242287,
+      longitude: 19.718783,
     },
-    "url": siteUrl,
-    "telephone": t.company.phone,
-    "email": t.company.email,
-    "openingHoursSpecification": [
+    url: siteUrl,
+    telephone: t.company.phone,
+    email: t.company.email,
+    openingHoursSpecification: [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "16:00"
-      }
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '16:00',
+      },
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "24"
-    }
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      reviewCount: '24',
+    },
   };
 
   // Structured Data: Services
   const servicesSchema = t.services.list.map((service, index) => ({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${siteUrl}/#service-${index}`,
-    "serviceType": service.title,
-    "provider": {
-      "@id": `${siteUrl}/#organization`
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${siteUrl}/#service-${index}`,
+    serviceType: service.title,
+    provider: {
+      '@id': `${siteUrl}/#organization`,
     },
-    "areaServed": [
-      { "@type": "City", "name": "Futog" },
-      { "@type": "City", "name": "Novi Sad" },
-      { "@type": "AdministrativeArea", "name": "Vojvodina" }
+    areaServed: [
+      { '@type': 'City', name: 'Futog' },
+      { '@type': 'City', name: 'Novi Sad' },
+      { '@type': 'AdministrativeArea', name: 'Vojvodina' },
     ],
-    "description": service.description
+    description: service.description,
   }));
 
   // Structured Data: Attorneys (Team Members)
   const attorneysSchema = t.team.members.map((member, index) => ({
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": `${siteUrl}/#attorney-${index}`,
-    "name": member.name,
-    "jobTitle": member.role,
-    "description": member.bio,
-    "email": member.email,
-    "image": member.img,
-    "worksFor": {
-      "@id": `${siteUrl}/#organization`
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${siteUrl}/#attorney-${index}`,
+    name: member.name,
+    jobTitle: member.role,
+    description: member.bio,
+    email: member.email,
+    image: member.img,
+    worksFor: {
+      '@id': `${siteUrl}/#organization`,
     },
-    "hasOccupation": {
-      "@type": "Occupation",
-      "name": "Attorney",
-      "occupationLocation": {
-        "@type": "Country",
-        "name": "Serbia"
-      }
-    }
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: 'Attorney',
+      occupationLocation: {
+        '@type': 'Country',
+        name: 'Serbia',
+      },
+    },
   }));
 
   // Structured Data: FAQPage (for rich snippets)
   const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": t.faqs.list.map((faq) => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.a
-      }
-    }))
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: t.faqs.list.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
   };
 
   // Structured Data: Blog Articles
   const articlesSchema = t.blog.articles.map((article, index) => ({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "@id": `${siteUrl}/#article-${index}`,
-    "headline": article.title,
-    "description": article.excerpt,
-    "image": article.img,
-    "datePublished": article.isoDate,
-    "dateModified": article.isoDate,
-    "articleSection": article.category,
-    "inLanguage": lang === 'sr' ? 'sr-Latn-RS' : 'en',
-    "author": {
-      "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      "name": t.company.name
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${siteUrl}/#article-${index}`,
+    headline: article.title,
+    description: article.excerpt,
+    image: article.img,
+    datePublished: article.isoDate,
+    dateModified: article.isoDate,
+    articleSection: article.category,
+    inLanguage: lang === 'sr' ? 'sr-Latn-RS' : 'en',
+    author: {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: t.company.name,
     },
-    "publisher": {
-      "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      "name": t.company.name,
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${siteUrl}/logo.png`
-      }
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: t.company.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/logo.png`,
+      },
     },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `${siteUrl}/#blog`
-    }
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/#blog`,
+    },
   }));
 
   // Meta tags
-  const title = lang === 'sr'
-    ? "Advokatska Kancelarija Trivunovic - Advokat Futog | Pravne Usluge"
-    : "Trivunovic Law Firm - Lawyer Futog | Legal Services";
+  const title =
+    lang === 'sr'
+      ? 'Advokatska Kancelarija Trivunovic - Advokat Futog | Pravne Usluge'
+      : 'Trivunovic Law Firm - Lawyer Futog | Legal Services';
 
-  const description = lang === 'sr'
-    ? "Advokatska kancelarija Trivunovic u Futog-u pruža profesionalne pravne usluge. Iskusni advokati za građansko, krivično, porodično i radno pravo. Zakažite besplatnu konsultaciju."
-    : "Trivunovic Law Firm in Futog provides professional legal services. Experienced lawyers for civil, criminal, family and labor law. Schedule a free consultation.";
+  const description =
+    lang === 'sr'
+      ? 'Advokatska kancelarija Trivunovic u Futog-u pruža profesionalne pravne usluge. Iskusni advokati za građansko, krivično, porodično i radno pravo. Zakažite besplatnu konsultaciju.'
+      : 'Trivunovic Law Firm in Futog provides professional legal services. Experienced lawyers for civil, criminal, family and labor law. Schedule a free consultation.';
 
-  const keywords = lang === 'sr'
-    ? "advokat futog, advokatska kancelarija futog, advokat novi sad, pravnik futog, pravne usluge futog, građansko pravo, krivično pravo, porodično pravo, radno pravo, advokat srbija"
-    : "lawyer futog, law firm futog, lawyer novi sad, attorney futog, legal services futog, civil law, criminal law, family law, labor law, lawyer serbia";
+  const keywords =
+    lang === 'sr'
+      ? 'advokat futog, advokatska kancelarija futog, advokat novi sad, pravnik futog, pravne usluge futog, građansko pravo, krivično pravo, porodično pravo, radno pravo, advokat srbija'
+      : 'lawyer futog, law firm futog, lawyer novi sad, attorney futog, legal services futog, civil law, criminal law, family law, labor law, lawyer serbia';
 
   return (
     <Helmet>
@@ -235,24 +239,12 @@ const SEO = () => {
       <meta name="ICBM" content="45.242287, 19.718783" />
 
       {/* JSON-LD Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(servicesSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(attorneysSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(articlesSchema)}
-      </script>
+      <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(servicesSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(attorneysSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(articlesSchema)}</script>
     </Helmet>
   );
 };

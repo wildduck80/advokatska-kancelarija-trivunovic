@@ -15,21 +15,21 @@ import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
   return (
-  <LanguageProvider>
-    <SEO />
-    <div className="app-container">
-      <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Team />
-      <Blog />
-      <FAQ />
-      <ContactForm />
-      <LazyMap />
-      <Footer />
-    </div>
-  </LanguageProvider>
+    <LanguageProvider>
+      <SEO />
+      <div className="app-container">
+        <Navbar />
+        <Hero />
+        <About />
+        <Services />
+        <Team />
+        <Blog />
+        <FAQ />
+        <ContactForm />
+        <LazyMap />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

@@ -32,11 +32,61 @@ const Footer = () => {
           <div className="footer-column">
             <h4 className="footer-heading">{t.footer.quickLinks.title}</h4>
             <ul className="footer-links">
-              <li><a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>{t.nav.home}</a></li>
-              <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>{t.nav.services}</a></li>
-              <li><a href="#team" onClick={(e) => { e.preventDefault(); scrollToSection('team'); }}>{t.nav.team}</a></li>
-              <li><a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}>{t.nav.faq}</a></li>
-              <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>{t.nav.contact}</a></li>
+              <li>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  {t.nav.home}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('services');
+                  }}
+                >
+                  {t.nav.services}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#team"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('team');
+                  }}
+                >
+                  {t.nav.team}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('faq');
+                  }}
+                >
+                  {t.nav.faq}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('contact');
+                  }}
+                >
+                  {t.nav.contact}
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -45,7 +95,17 @@ const Footer = () => {
             <h4 className="footer-heading">{t.footer.practiceAreas.title}</h4>
             <ul className="footer-links">
               {t.footer.practiceAreas.areas.map((area, index) => (
-                <li key={index}><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>{area}</a></li>
+                <li key={index}>
+                  <a
+                    href="#services"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection('services');
+                    }}
+                  >
+                    {area}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
@@ -65,14 +125,18 @@ const Footer = () => {
                 <span className="footer-icon">📞</span>
                 <div>
                   <strong>{t.contact.info.phoneLabel}</strong>
-                  <p><a href={`tel:${t.company.phone.replace(/\s/g, '')}`}>{t.company.phone}</a></p>
+                  <p>
+                    <a href={`tel:${t.company.phone.replace(/\s/g, '')}`}>{t.company.phone}</a>
+                  </p>
                 </div>
               </li>
               <li>
                 <span className="footer-icon">✉️</span>
                 <div>
                   <strong>{t.contact.info.emailLabel}</strong>
-                  <p><a href={`mailto:${t.company.email}`}>{t.company.email}</a></p>
+                  <p>
+                    <a href={`mailto:${t.company.email}`}>{t.company.email}</a>
+                  </p>
                 </div>
               </li>
               <li>

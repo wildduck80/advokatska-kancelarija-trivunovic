@@ -43,10 +43,14 @@ const ContactForm = () => {
     }
 
     // Check if EmailJS is configured
-    if (!serviceId || !templateId || !publicKey ||
-        serviceId === 'your_service_id_here' ||
-        templateId === 'your_template_id_here' ||
-        publicKey === 'your_public_key_here') {
+    if (
+      !serviceId ||
+      !templateId ||
+      !publicKey ||
+      serviceId === 'your_service_id_here' ||
+      templateId === 'your_template_id_here' ||
+      publicKey === 'your_public_key_here'
+    ) {
       console.error('EmailJS not configured. Please set environment variables.');
       setStatus('error');
       setIsSubmitting(false);
@@ -56,24 +60,21 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    emailjs.sendForm(
-      serviceId,
-      templateId,
-      form.current,
-      publicKey
-    )
-      .then(() => {
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+      () => {
         setStatus('success');
         setIsSubmitting(false);
         lastSubmissionTime = Date.now(); // Update rate limit timestamp
         e.target.reset();
         setTimeout(() => setStatus(''), 5000);
-      }, (error) => {
+      },
+      (error) => {
         setStatus('error');
         setIsSubmitting(false);
         console.error('EmailJS Error:', error);
         setTimeout(() => setStatus(''), 5000);
-      });
+      }
+    );
   };
 
   return (
@@ -87,10 +88,7 @@ const ContactForm = () => {
           <p className="section-subtitle">{t.contact.form.subheading}</p>
         </div>
 
-        <div
-          ref={formRef}
-          className={`form-wrapper animate-scale ${formVisible ? 'visible' : ''}`}
-        >
+        <div ref={formRef} className={`form-wrapper animate-scale ${formVisible ? 'visible' : ''}`}>
           <form ref={form} onSubmit={sendEmail} className="legal-form">
             {/* Honeypot field - hidden from users, visible to bots */}
             <input
@@ -141,15 +139,12 @@ const ContactForm = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="legal_area">{t.contact.form.fields.legalArea}</label>
-                <select
-                  id="legal_area"
-                  name="legal_area"
-                  required
-                  disabled={isSubmitting}
-                >
+                <select id="legal_area" name="legal_area" required disabled={isSubmitting}>
                   <option value="">{t.contact.form.placeholders.selectArea}</option>
                   {t.services.list.map((service, index) => (
-                    <option key={index} value={service.title}>{service.title}</option>
+                    <option key={index} value={service.title}>
+                      {service.title}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -180,18 +175,20 @@ const ContactForm = () => {
           </form>
 
           {status && (
-            <div className={`status-message ${
-              status === 'success' ? 'success' :
-              status === 'rateLimit' ? 'warning' :
-              'error'
-            }`}>
+            <div
+              className={`status-message ${
+                status === 'success' ? 'success' : status === 'rateLimit' ? 'warning' : 'error'
+              }`}
+            >
               <span className="status-icon">
                 {status === 'success' ? '✓' : status === 'rateLimit' ? '⚠' : '✕'}
               </span>
               <p>
-                {status === 'success' ? t.contact.form.successMessage :
-                 status === 'rateLimit' ? t.contact.form.rateLimitError :
-                 t.contact.form.errorMessage}
+                {status === 'success'
+                  ? t.contact.form.successMessage
+                  : status === 'rateLimit'
+                    ? t.contact.form.rateLimitError
+                    : t.contact.form.errorMessage}
               </p>
             </div>
           )}

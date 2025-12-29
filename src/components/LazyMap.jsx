@@ -40,7 +40,7 @@ const LazyMap = () => {
       },
       {
         rootMargin: '200px', // Load when within 200px of viewport
-        threshold: 0
+        threshold: 0,
       }
     );
 

@@ -19,10 +19,7 @@ const FAQ = () => {
 
         <div className="faq-list">
           {t.faqs.list.map((item, index) => (
-            <div
-              key={index}
-              className={`faq-item ${activeIndex === index ? 'active' : ''}`}
-            >
+            <div key={index} className={`faq-item ${activeIndex === index ? 'active' : ''}`}>
               <div
                 className="faq-question"
                 onClick={() => toggleFAQ(index)}
@@ -31,9 +28,7 @@ const FAQ = () => {
                 onKeyPress={(e) => e.key === 'Enter' && toggleFAQ(index)}
               >
                 <h3>{item.q}</h3>
-                <span className="faq-icon">
-                  {activeIndex === index ? '−' : '+'}
-                </span>
+                <span className="faq-icon">{activeIndex === index ? '−' : '+'}</span>
               </div>
               <div className={`faq-answer ${activeIndex === index ? 'show' : ''}`}>
                 <p>{item.a}</p>

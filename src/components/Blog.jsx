@@ -48,10 +48,7 @@ const Blog = () => {
                 <span className="blog-date">{article.date}</span>
                 <h3>{article.title}</h3>
                 <p>{article.excerpt}</p>
-                <button
-                  className="read-more"
-                  onClick={(e) => handleReadMore(e, article)}
-                >
+                <button className="read-more" onClick={(e) => handleReadMore(e, article)}>
                   {t.blog.readMore} <span className="arrow">→</span>
                 </button>
               </div>

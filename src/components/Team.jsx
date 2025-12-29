@@ -29,12 +29,12 @@ const Team = () => {
                 {/* Recommended: High-quality headshots, 400x500px, professional attire */}
                 <img
                   src={member.img}
-                  alt={`Professional portrait of ${member.name}, ${member.role}`}
+                  alt={`${t.team.portraitAlt} ${member.name}, ${member.role}`}
                   loading="lazy"
                 />
                 <div className="team-overlay">
                   <a href={`mailto:${member.email}`} className="team-email-btn">
-                    📧 Contact
+                    📧 {t.team.contactBtn}
                   </a>
                 </div>
               </div>

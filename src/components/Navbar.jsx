@@ -18,16 +18,44 @@ const Navbar = () => {
 
         {/* Links now have 'active' class and 'closeMenu' handler */}
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li><a href="#" onClick={closeMenu}>{t.nav.home}</a></li>
-          <li><a href="#about" onClick={closeMenu}>{t.nav.about}</a></li>
-          <li><a href="#services" onClick={closeMenu}>{t.nav.services}</a></li>
-          <li><a href="#team" onClick={closeMenu}>{t.nav.team}</a></li>
-          <li><a href="#contact-form" onClick={closeMenu}>{t.nav.contact}</a></li>
-          <li><a href="#blog" onClick={closeMenu}>{t.nav.blog}</a></li>
+          <li>
+            <a href="#" onClick={closeMenu}>
+              {t.nav.home}
+            </a>
+          </li>
+          <li>
+            <a href="#about" onClick={closeMenu}>
+              {t.nav.about}
+            </a>
+          </li>
+          <li>
+            <a href="#services" onClick={closeMenu}>
+              {t.nav.services}
+            </a>
+          </li>
+          <li>
+            <a href="#team" onClick={closeMenu}>
+              {t.nav.team}
+            </a>
+          </li>
+          <li>
+            <a href="#contact-form" onClick={closeMenu}>
+              {t.nav.contact}
+            </a>
+          </li>
+          <li>
+            <a href="#blog" onClick={closeMenu}>
+              {t.nav.blog}
+            </a>
+          </li>
 
           {/* Language Toggle - visible in both desktop and mobile menu */}
           <li>
-            <button onClick={toggleLanguage} className="lang-btn" title={lang === 'sr' ? 'Switch to English' : 'Prebaci na srpski'}>
+            <button
+              onClick={toggleLanguage}
+              className="lang-btn"
+              title={lang === 'sr' ? 'Switch to English' : 'Prebaci na srpski'}
+            >
               {lang === 'sr' ? '🇬🇧' : '🇷🇸'}
             </button>
           </li>

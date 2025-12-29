@@ -1,8 +1,8 @@
 /* --- 1. VARIABLES & RESET --- */
 :root {
-  --primary: #0a1428;    /* Deep Midnight Navy */
-  --accent: #c5a059;     /* Legal Gold */
-  --bg-light: #f4f7f9;   /* Soft Grey-Blue Background */
+  --primary: #0a1428; /* Deep Midnight Navy */
+  --accent: #c5a059; /* Legal Gold */
+  --bg-light: #f4f7f9; /* Soft Grey-Blue Background */
   --text-dark: #1a1a1a;
   --text-muted: #555;
   --white: #ffffff;
@@ -13,7 +13,9 @@
 .animate-fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 }
 
 .animate-fade-in.visible {
@@ -24,7 +26,9 @@
 .animate-slide-left {
   opacity: 0;
   transform: translateX(-50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 }
 
 .animate-slide-left.visible {
@@ -35,7 +39,9 @@
 .animate-slide-right {
   opacity: 0;
   transform: translateX(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 }
 
 .animate-slide-right.visible {
@@ -46,7 +52,9 @@
 .animate-scale {
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 }
 
 .animate-scale.visible {
@@ -58,15 +66,29 @@
 .stagger-animation > * {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
-.stagger-animation.visible > *:nth-child(1) { transition-delay: 0.1s; }
-.stagger-animation.visible > *:nth-child(2) { transition-delay: 0.2s; }
-.stagger-animation.visible > *:nth-child(3) { transition-delay: 0.3s; }
-.stagger-animation.visible > *:nth-child(4) { transition-delay: 0.4s; }
-.stagger-animation.visible > *:nth-child(5) { transition-delay: 0.5s; }
-.stagger-animation.visible > *:nth-child(6) { transition-delay: 0.6s; }
+.stagger-animation.visible > *:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.stagger-animation.visible > *:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.stagger-animation.visible > *:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.stagger-animation.visible > *:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.stagger-animation.visible > *:nth-child(5) {
+  transition-delay: 0.5s;
+}
+.stagger-animation.visible > *:nth-child(6) {
+  transition-delay: 0.6s;
+}
 
 .stagger-animation.visible > * {
   opacity: 1;
@@ -109,7 +131,10 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, .logo {
+h1,
+h2,
+h3,
+.logo {
   font-family: 'Playfair Display', serif; /* Elegant for headings */
 }
 
@@ -135,7 +160,7 @@ section {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
 
 .nav-flex {
@@ -201,8 +226,9 @@ section {
 /* --- 3. HERO SECTION --- */
 .hero {
   height: 90vh;
-  background: linear-gradient(rgba(10, 20, 40, 0.7), rgba(10, 20, 40, 0.7)),
-              url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920');
+  background:
+    linear-gradient(rgba(10, 20, 40, 0.7), rgba(10, 20, 40, 0.7)),
+    url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -344,7 +370,7 @@ section {
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
 .service-card:hover::before {
@@ -403,7 +429,7 @@ section {
   padding: 40px 30px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   position: sticky;
   top: 100px;
 }
@@ -478,7 +504,7 @@ section {
 
 .value-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .value-card:hover::before {
@@ -516,7 +542,7 @@ section {
   padding: 60px 40px;
   background: var(--primary);
   border-radius: 16px;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
 }
 
 .stat-item {
@@ -560,7 +586,7 @@ section {
   background: var(--white);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: var(--transition);
   display: flex;
   flex-direction: column;
@@ -568,7 +594,7 @@ section {
 
 .blog-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .blog-image {
@@ -687,8 +713,12 @@ section {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .article-modal {
@@ -809,7 +839,7 @@ section {
 
 .article-modal-body br {
   display: block;
-  content: "";
+  content: '';
   margin-top: 10px;
 }
 
@@ -871,13 +901,13 @@ section {
   background: var(--white);
   border-radius: 8px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: var(--transition);
 }
 
 .faq-item:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .faq-item.active {
@@ -923,7 +953,9 @@ section {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  transition:
+    max-height 0.4s ease,
+    padding 0.4s ease;
   padding: 0 30px;
 }
 
@@ -955,13 +987,13 @@ section {
   background: var(--white);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: var(--transition);
 }
 
 .team-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .team-image {
@@ -1461,8 +1493,13 @@ section {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1670,12 +1707,14 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* --- 11. MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2.5rem; }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 
   .section-header h2 {
     font-size: 2rem;

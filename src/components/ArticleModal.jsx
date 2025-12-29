@@ -67,11 +67,7 @@ const ArticleModal = ({ article, isOpen, onClose }) => {
   return (
     <div className="article-modal-overlay" onClick={handleOverlayClick}>
       <div className="article-modal">
-        <button
-          className="article-modal-close"
-          onClick={onClose}
-          aria-label={t.blog.closeModal}
-        >
+        <button className="article-modal-close" onClick={onClose} aria-label={t.blog.closeModal}>
           &times;
         </button>
 
