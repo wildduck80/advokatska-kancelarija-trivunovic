@@ -182,6 +182,7 @@ export const translations = {
           title: "Nove Izmene Zakona o Radu 2025",
           excerpt: "Analiziramo najvažnije izmene koje se odnose na radne ugovore, otpremnine i rad na daljinu.",
           date: "15. Decembar 2024",
+          isoDate: "2024-12-15",
           category: "Radno Pravo",
           img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800"
         },
@@ -189,6 +190,7 @@ export const translations = {
           title: "Postupak Kupovine Nekretnine: Vodič za Kupce",
           excerpt: "Korak po korak objašnjenje svih pravnih aspekata kupovine stana ili kuće u Srbiji.",
           date: "8. Decembar 2024",
+          isoDate: "2024-12-08",
           category: "Nekretnine",
           img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800"
         },
@@ -196,6 +198,7 @@ export const translations = {
           title: "Zaštita Autorskih Prava u Digitalnom Dobu",
           excerpt: "Kako zaštititi vaš kreativni rad na internetu i koje mere možete preduzeti protiv kršenja prava.",
           date: "1. Decembar 2024",
+          isoDate: "2024-12-01",
           category: "Intelektualna Svojina",
           img: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800"
         }
@@ -496,6 +499,7 @@ export const translations = {
           title: "New Amendments to Labor Law 2025",
           excerpt: "Analyzing the most important changes related to employment contracts, severance pay, and remote work.",
           date: "December 15, 2024",
+          isoDate: "2024-12-15",
           category: "Labor Law",
           img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800"
         },
@@ -503,6 +507,7 @@ export const translations = {
           title: "Real Estate Purchase Process: Buyer's Guide",
           excerpt: "Step-by-step explanation of all legal aspects of buying an apartment or house in Serbia.",
           date: "December 8, 2024",
+          isoDate: "2024-12-08",
           category: "Real Estate",
           img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800"
         },
@@ -510,6 +515,7 @@ export const translations = {
           title: "Copyright Protection in the Digital Age",
           excerpt: "How to protect your creative work online and what measures you can take against infringement.",
           date: "December 1, 2024",
+          isoDate: "2024-12-01",
           category: "Intellectual Property",
           img: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800"
         }

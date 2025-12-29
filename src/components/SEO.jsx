@@ -143,6 +143,38 @@ const SEO = () => {
     }))
   };
 
+  // Structured Data: Blog Articles
+  const articlesSchema = t.blog.articles.map((article, index) => ({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${siteUrl}/#article-${index}`,
+    "headline": article.title,
+    "description": article.excerpt,
+    "image": article.img,
+    "datePublished": article.isoDate,
+    "dateModified": article.isoDate,
+    "articleSection": article.category,
+    "inLanguage": lang === 'sr' ? 'sr-Latn-RS' : 'en',
+    "author": {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      "name": t.company.name
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      "name": t.company.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/logo.png`
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/#blog`
+    }
+  }));
+
   // Meta tags
   const title = lang === 'sr'
     ? "Advokatska Kancelarija Trivunovic - Advokat Futog | Pravne Usluge"
@@ -217,6 +249,9 @@ const SEO = () => {
       </script>
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(articlesSchema)}
       </script>
     </Helmet>
   );
