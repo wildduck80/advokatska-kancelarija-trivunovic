@@ -39,10 +39,12 @@ const SEO = () => {
       "closes": "16:00"
     },
     "priceRange": "$$",
-    "areaServed": {
-      "@type": "City",
-      "name": "Futog"
-    },
+    "areaServed": [
+      { "@type": "City", "name": "Futog" },
+      { "@type": "City", "name": "Novi Sad" },
+      { "@type": "AdministrativeArea", "name": "Vojvodina" },
+      { "@type": "Country", "name": "Serbia" }
+    ],
     "sameAs": [
       // Add social media links when available
     ]
@@ -96,12 +98,50 @@ const SEO = () => {
     "provider": {
       "@id": `${siteUrl}/#organization`
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Futog"
-    },
+    "areaServed": [
+      { "@type": "City", "name": "Futog" },
+      { "@type": "City", "name": "Novi Sad" },
+      { "@type": "AdministrativeArea", "name": "Vojvodina" }
+    ],
     "description": service.description
   }));
+
+  // Structured Data: Attorneys (Team Members)
+  const attorneysSchema = t.team.members.map((member, index) => ({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${siteUrl}/#attorney-${index}`,
+    "name": member.name,
+    "jobTitle": member.role,
+    "description": member.bio,
+    "email": member.email,
+    "image": member.img,
+    "worksFor": {
+      "@id": `${siteUrl}/#organization`
+    },
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Attorney",
+      "occupationLocation": {
+        "@type": "Country",
+        "name": "Serbia"
+      }
+    }
+  }));
+
+  // Structured Data: FAQPage (for rich snippets)
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": t.faqs.list.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
 
   // Meta tags
   const title = lang === 'sr'
@@ -171,6 +211,12 @@ const SEO = () => {
       </script>
       <script type="application/ld+json">
         {JSON.stringify(servicesSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(attorneysSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(faqSchema)}
       </script>
     </Helmet>
   );
