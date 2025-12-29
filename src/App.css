@@ -1240,6 +1240,45 @@ section {
   }
 }
 
+/* Map Placeholder (lazy loading) */
+.map-placeholder {
+  height: 500px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.map-placeholder-content {
+  text-align: center;
+  color: var(--text-light);
+}
+
+.map-placeholder-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.map-placeholder-content p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@media (max-width: 768px) {
+  .map-placeholder {
+    height: 350px;
+  }
+}
+
 /* --- 10. FOOTER --- */
 .footer {
   background: linear-gradient(135deg, #0a1428 0%, #050a14 100%);

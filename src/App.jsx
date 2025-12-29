@@ -9,7 +9,7 @@ import Team from './components/Team';
 import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import ContactForm from './components/ContactForm';
-import Map from './components/Map';
+import LazyMap from './components/LazyMap';
 import Footer from './components/Footer';
 import { LanguageProvider } from './context/LanguageContext';
 
@@ -26,7 +26,7 @@ function App() {
       <Blog />
       <FAQ />
       <ContactForm />
-      <Map />
+      <LazyMap />
       <Footer />
     </div>
   </LanguageProvider>

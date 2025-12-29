@@ -275,7 +275,8 @@ export const translations = {
     map: {
       heading: "Posetite Nas",
       subheading: "Naša kancelarija se nalazi u centru Futoga",
-      getDirections: "Otvori u Mapi"
+      getDirections: "Otvori u Mapi",
+      loading: "Učitavanje mape..."
     },
 
     // Footer
@@ -588,7 +589,8 @@ export const translations = {
     map: {
       heading: "Visit Us",
       subheading: "Our office is located in the center of Futog",
-      getDirections: "Open in Map"
+      getDirections: "Open in Map",
+      loading: "Loading map..."
     },
 
     // Footer
