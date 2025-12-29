@@ -177,10 +177,34 @@ export const translations = {
       heading: "Pravne Novosti i Saveti",
       subheading: "Budite informisani o promenama u zakonodavstvu",
       readMore: "Pročitajte više",
+      closeModal: "Zatvori",
       articles: [
         {
           title: "Nove Izmene Zakona o Radu 2025",
           excerpt: "Analiziramo najvažnije izmene koje se odnose na radne ugovore, otpremnine i rad na daljinu.",
+          content: `Zakon o radu u Srbiji doživljava značajne izmene koje stupaju na snagu 2025. godine. Ove promene imaju za cilj modernizaciju radnog zakonodavstva i usklađivanje sa evropskim standardima.
+
+**Ključne izmene:**
+
+**1. Rad na daljinu**
+Nova regulativa preciznije definiše prava i obaveze zaposlenih koji rade od kuće. Poslodavci su sada obavezni da obezbede adekvatnu opremu i nadoknade troškove rada od kuće, uključujući internet i električnu energiju.
+
+**2. Otpremnine**
+Minimalna otpremnina povećana je sa jedne trećine na polovinu zarade po godini radnog staža. Ova izmena značajno poboljšava položaj zaposlenih u slučaju otkaza.
+
+**3. Fleksibilno radno vreme**
+Uvedena je mogućnost fleksibilnog radnog vremena za roditelje dece do 8 godina starosti. Zaposleni mogu zahtevati prilagođavanje početka i kraja radnog vremena.
+
+**4. Digitalni ugovori**
+Omogućeno je zaključivanje ugovora o radu u elektronskoj formi sa kvalifikovanim elektronskim potpisom, što značajno ubrzava proces zapošljavanja.
+
+**Preporuke za poslodavce:**
+- Revidirajte postojeće ugovore o radu
+- Ažurirajte pravilnike o radu
+- Pripremite politike za rad na daljinu
+- Konsultujte se sa pravnim stručnjacima
+
+Za detaljniju analizu kako ove izmene utiču na vašu situaciju, kontaktirajte našu kancelariju za besplatne konsultacije.`,
           date: "15. Decembar 2024",
           isoDate: "2024-12-15",
           category: "Radno Pravo",
@@ -189,6 +213,56 @@ export const translations = {
         {
           title: "Postupak Kupovine Nekretnine: Vodič za Kupce",
           excerpt: "Korak po korak objašnjenje svih pravnih aspekata kupovine stana ili kuće u Srbiji.",
+          content: `Kupovina nekretnine je jedna od najvažnijih finansijskih odluka u životu. Ovaj vodič vam pomaže da razumete sve pravne aspekte procesa i izbegnete potencijalne probleme.
+
+**Faza 1: Priprema**
+
+Pre nego što počnete sa pretragom nekretnina, potrebno je:
+- Proveriti svoju kreditnu sposobnost
+- Obezbediti predugovor za kredit (ako je potreban)
+- Angažovati advokata za nekretnine
+
+**Faza 2: Provera nekretnine**
+
+**Provera vlasništva**
+Neophodno je izvršiti uvid u list nepokretnosti u katastru. Proverite:
+- Ko je upisani vlasnik
+- Da li postoje tereti (hipoteke, službenosti)
+- Da li postoje sudski sporovi
+
+**Provera urbanističkog statusa**
+- Da li je objekat legalan
+- Da li postoji građevinska i upotrebna dozvola
+- Kakav je urbanistički plan za tu lokaciju
+
+**Faza 3: Predugovor**
+
+Predugovor o kupoprodaji definiše:
+- Cenu i način plaćanja
+- Rokove za ispunjenje obaveza
+- Kaparu (obično 10% vrednosti)
+- Uslove raskida
+
+**Faza 4: Glavni ugovor**
+
+Ugovor o kupoprodaji nepokretnosti mora biti:
+- Sačinjen u pisanoj formi
+- Overen kod javnog beležnika
+- Potpisan od obe strane
+
+**Faza 5: Uknjižba**
+
+Nakon potpisivanja ugovora, potrebno je:
+- Podneti zahtev za uknjižbu u katastru
+- Platiti porez na prenos apsolutnih prava (2.5%)
+- Prijaviti promenu vlasništva komunalnim službama
+
+**Naši saveti:**
+- Nikada ne plaćajte pre provere dokumentacije
+- Insistirajte na clausuli o oslobađanju nekretnine od tereta
+- Čuvajte sve dokaze o plaćanju
+
+Kontaktirajte nas za pravnu pomoć u procesu kupovine nekretnine.`,
           date: "8. Decembar 2024",
           isoDate: "2024-12-08",
           category: "Nekretnine",
@@ -197,6 +271,52 @@ export const translations = {
         {
           title: "Zaštita Autorskih Prava u Digitalnom Dobu",
           excerpt: "Kako zaštititi vaš kreativni rad na internetu i koje mere možete preduzeti protiv kršenja prava.",
+          content: `U eri interneta, zaštita intelektualne svojine postaje sve veći izazov. Ovaj članak objašnjava kako možete zaštititi svoj kreativni rad i šta učiniti kada neko prekrši vaša prava.
+
+**Šta su autorska prava?**
+
+Autorska prava štite originalna dela kao što su:
+- Tekstovi i knjige
+- Fotografije i ilustracije
+- Muzika i video sadržaji
+- Softver i aplikacije
+- Dizajn i grafika
+
+Autorsko pravo nastaje automatski u trenutku stvaranja dela - registracija nije obavezna, ali može biti korisna kao dokaz.
+
+**Kako zaštititi svoj rad online?**
+
+**1. Vodeni žigovi (Watermarks)**
+Dodajte vodeni žig na fotografije i grafiku. Ovo otežava neovlašćeno korišćenje i služi kao dokaz vlasništva.
+
+**2. Metapodaci**
+Ugrađujte informacije o autorstvu u digitalne fajlove. Mnogi formati podržavaju EXIF i IPTC podatke.
+
+**3. Registracija dela**
+Iako nije obavezna, registracija kod nadležnog organa pruža dodatnu pravnu zaštitu i olakšava dokazivanje vlasništva.
+
+**4. Creative Commons licence**
+Ako želite da dozvolite određeno korišćenje, koristite CC licence da jasno definišete uslove.
+
+**Šta učiniti kada neko prekrši vaša prava?**
+
+**Korak 1: Dokumentujte povredu**
+- Napravite screenshot
+- Sačuvajte URL adresu
+- Zabeležite datum i vreme
+
+**Korak 2: Pošaljite zahtev za uklanjanje**
+Kontaktirajte platformu sa DMCA zahtevom ili direktno prekršioca sa opomenom pred tužbu.
+
+**Korak 3: Pravna akcija**
+Ako prethodni koraci ne urode plodom, možete pokrenuti sudski postupak za naknadu štete.
+
+**Kazne za kršenje autorskih prava:**
+- Novčane kazne do 500.000 dinara
+- Naknada štete autoru
+- U težim slučajevima, krivična odgovornost
+
+Za pomoć u zaštiti vaših autorskih prava, obratite se našem timu stručnjaka.`,
           date: "1. Decembar 2024",
           isoDate: "2024-12-01",
           category: "Intelektualna Svojina",
@@ -494,10 +614,34 @@ export const translations = {
       heading: "Legal News & Advice",
       subheading: "Stay informed about changes in legislation",
       readMore: "Read More",
+      closeModal: "Close",
       articles: [
         {
           title: "New Amendments to Labor Law 2025",
           excerpt: "Analyzing the most important changes related to employment contracts, severance pay, and remote work.",
+          content: `Serbia's Labor Law is undergoing significant amendments that come into effect in 2025. These changes aim to modernize labor legislation and align it with European standards.
+
+**Key Amendments:**
+
+**1. Remote Work**
+New regulations more precisely define the rights and obligations of employees working from home. Employers are now required to provide adequate equipment and reimburse work-from-home costs, including internet and electricity.
+
+**2. Severance Pay**
+The minimum severance has been increased from one-third to one-half of salary per year of service. This amendment significantly improves employees' position in case of termination.
+
+**3. Flexible Working Hours**
+The possibility of flexible working hours has been introduced for parents of children up to 8 years of age. Employees can request adjustment of start and end times.
+
+**4. Digital Contracts**
+Employment contracts can now be concluded electronically with a qualified electronic signature, significantly speeding up the hiring process.
+
+**Recommendations for Employers:**
+- Review existing employment contracts
+- Update internal work regulations
+- Prepare remote work policies
+- Consult with legal experts
+
+For a more detailed analysis of how these changes affect your situation, contact our office for free consultations.`,
           date: "December 15, 2024",
           isoDate: "2024-12-15",
           category: "Labor Law",
@@ -506,6 +650,56 @@ export const translations = {
         {
           title: "Real Estate Purchase Process: Buyer's Guide",
           excerpt: "Step-by-step explanation of all legal aspects of buying an apartment or house in Serbia.",
+          content: `Buying real estate is one of the most important financial decisions in life. This guide helps you understand all legal aspects of the process and avoid potential problems.
+
+**Phase 1: Preparation**
+
+Before you start searching for properties, you need to:
+- Check your creditworthiness
+- Secure a loan pre-approval (if needed)
+- Hire a real estate lawyer
+
+**Phase 2: Property Verification**
+
+**Ownership Check**
+It is essential to review the property register at the cadastre. Check:
+- Who is the registered owner
+- Whether there are encumbrances (mortgages, easements)
+- Whether there are ongoing court disputes
+
+**Urban Planning Status Check**
+- Is the building legal
+- Is there a construction and occupancy permit
+- What is the urban plan for the location
+
+**Phase 3: Pre-Contract**
+
+The pre-contract defines:
+- Price and payment method
+- Deadlines for fulfilling obligations
+- Deposit (usually 10% of value)
+- Termination conditions
+
+**Phase 4: Main Contract**
+
+The real estate purchase contract must be:
+- Made in written form
+- Notarized by a public notary
+- Signed by both parties
+
+**Phase 5: Registration**
+
+After signing the contract, you need to:
+- Submit a registration request to the cadastre
+- Pay the property transfer tax (2.5%)
+- Report the ownership change to utility services
+
+**Our Advice:**
+- Never pay before verifying documentation
+- Insist on a clause for clearing the property of encumbrances
+- Keep all proof of payment
+
+Contact us for legal assistance in the property purchase process.`,
           date: "December 8, 2024",
           isoDate: "2024-12-08",
           category: "Real Estate",
@@ -514,6 +708,52 @@ export const translations = {
         {
           title: "Copyright Protection in the Digital Age",
           excerpt: "How to protect your creative work online and what measures you can take against infringement.",
+          content: `In the internet era, protecting intellectual property is becoming an increasing challenge. This article explains how you can protect your creative work and what to do when someone violates your rights.
+
+**What are Copyrights?**
+
+Copyrights protect original works such as:
+- Texts and books
+- Photographs and illustrations
+- Music and video content
+- Software and applications
+- Design and graphics
+
+Copyright arises automatically at the moment of creation - registration is not mandatory but can be useful as evidence.
+
+**How to Protect Your Work Online?**
+
+**1. Watermarks**
+Add watermarks to photographs and graphics. This makes unauthorized use more difficult and serves as proof of ownership.
+
+**2. Metadata**
+Embed authorship information in digital files. Many formats support EXIF and IPTC data.
+
+**3. Work Registration**
+Although not mandatory, registration with the competent authority provides additional legal protection and facilitates proof of ownership.
+
+**4. Creative Commons Licenses**
+If you want to allow certain uses, use CC licenses to clearly define the terms.
+
+**What to Do When Someone Violates Your Rights?**
+
+**Step 1: Document the Violation**
+- Take a screenshot
+- Save the URL
+- Record the date and time
+
+**Step 2: Send a Takedown Request**
+Contact the platform with a DMCA request or directly contact the infringer with a cease and desist letter.
+
+**Step 3: Legal Action**
+If previous steps don't work, you can initiate court proceedings for damages.
+
+**Penalties for Copyright Infringement:**
+- Fines up to 500,000 dinars
+- Compensation to the author
+- In severe cases, criminal liability
+
+For help protecting your copyrights, contact our team of experts.`,
           date: "December 1, 2024",
           isoDate: "2024-12-01",
           category: "Intellectual Property",
