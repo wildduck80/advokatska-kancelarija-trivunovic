@@ -1,10 +1,10 @@
 import React from 'react';
 import { Helmet } from '@dr.pogodin/react-helmet';
-import { useLang } from '../context/LanguageContext';
+import { useLang } from '../context/useLang';
 
 const SEO = () => {
   const { lang, t } = useLang();
-  const siteUrl = 'https://trifunovic-law.com'; // Replace with actual domain
+  const siteUrl = 'https://trivunovic-law.rs';
 
   // Structured Data: Organization
   const organizationSchema = {

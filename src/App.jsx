@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './styles/index.css';
 import SEO from './components/SEO';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -18,15 +18,20 @@ function App() {
     <LanguageProvider>
       <SEO />
       <div className="app-container">
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <Navbar />
-        <Hero />
-        <About />
-        <Services />
-        <Team />
-        <Blog />
-        <FAQ />
-        <ContactForm />
-        <LazyMap />
+        <main id="main-content">
+          <Hero />
+          <About />
+          <Services />
+          <Team />
+          <Blog />
+          <FAQ />
+          <ContactForm />
+          <LazyMap />
+        </main>
         <Footer />
       </div>
     </LanguageProvider>

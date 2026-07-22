@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLang } from '../context/LanguageContext';
+import { useLang } from '../context/useLang';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Team = () => {
@@ -30,6 +30,8 @@ const Team = () => {
                 <img
                   src={member.img}
                   alt={`${t.team.portraitAlt} ${member.name}, ${member.role}`}
+                  width="400"
+                  height="500"
                   loading="lazy"
                 />
                 <div className="team-overlay">

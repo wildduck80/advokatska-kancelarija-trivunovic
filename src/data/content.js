@@ -12,6 +12,7 @@ export const translations = {
       blog: 'Blog',
       faq: 'Česta Pitanja',
       contact: 'Kontakt',
+      menu: 'Meni',
     },
 
     // Company Information
@@ -148,42 +149,10 @@ export const translations = {
         },
         {
           name: 'Maja Reljin',
-          role: 'Advokat - Pravno savetovanje',
+          role: 'Advokat - Krivično Pravo',
           bio: 'Specijalizovan za krivično pravo i zastupanje u prekršajnom postupku. Iskustvo u zaštiti ljudskih prava.',
           email: 'maja.reljin@trivunovic-law.rs',
           img: '/images/kume.webp',
-        },
-      ],
-    },
-
-    // Testimonials
-    testimonials: {
-      heading: 'Šta Klijenti Kažu',
-      subheading: 'Poverenje izgrađeno rezultatima',
-      list: [
-        {
-          text: 'Profesionalizam i posvećenost advokata Trifunovića bili su ključni u uspešnom rešavanju našeg spora. Toplo ih preporučujem!',
-          author: 'Marko Trifunović',
-          position: 'Direktor Trifunović Holding',
-          rating: 5,
-        },
-        {
-          text: 'Izuzetan pristup u porodičnom pravu. Sa strpljenjem i stručnošću rešili su veoma osetljiv slučaj. Hvala od srca!',
-          author: 'Nadezda Petrovic',
-          position: 'Klijent',
-          rating: 5,
-        },
-        {
-          text: 'U oblasti krivičnog prava pokazali su neverovatnu ekspertizu. Naša odbrana je bila precizna i dobro pripremljena.',
-          author: 'Stefan Nenadic',
-          position: 'Klijent',
-          rating: 5,
-        },
-        {
-          text: 'Preduzeće je dobilo pravnu podršku najvišeg kvaliteta. Njihovo poznavanje privrednog prava je impresivno.',
-          author: 'Atila Bala',
-          position: 'Portfolio Director',
-          rating: 5,
         },
       ],
     },
@@ -194,6 +163,7 @@ export const translations = {
       subheading: 'Budite informisani o promenama u zakonodavstvu',
       readMore: 'Pročitajte više',
       closeModal: 'Zatvori',
+      imageAlt: 'Pravni članak o temi',
       articles: [
         {
           title: 'Nove Izmene Zakona o Radu 2025',
@@ -477,6 +447,7 @@ Za pomoć u zaštiti vaših autorskih prava, obratite se našem timu stručnjaka
       blog: 'Blog',
       faq: 'FAQ',
       contact: 'Contact',
+      menu: 'Menu',
     },
 
     // Company Information
@@ -600,7 +571,7 @@ Za pomoć u zaštiti vaših autorskih prava, obratite se našem timu stručnjaka
         {
           name: 'Bosko Trivunović',
           role: 'Founder & Managing Partner',
-          bio: 'Over 20 years of experience in corporate and civil law. Specialization in contract law and M&A transactions.',
+          bio: 'Over 15 years of experience in corporate and civil law. Specialization in contract law and M&A transactions.',
           email: 'bosko.trivunovic@trivunovic-law.rs',
           img: 'https://via.placeholder.com/400x500/0a1428/c5a059?text=M.T.',
         },
@@ -621,44 +592,13 @@ Za pomoć u zaštiti vaših autorskih prava, obratite se našem timu stručnjaka
       ],
     },
 
-    // Testimonials
-    testimonials: {
-      heading: 'What Clients Say',
-      subheading: 'Trust built through results',
-      list: [
-        {
-          text: 'The professionalism and dedication of Attorney Trivunović were key to successfully resolving our dispute. I highly recommend them!',
-          author: 'Milan Kovacevic',
-          position: 'Director, Kovacevic LLC',
-          rating: 5,
-        },
-        {
-          text: 'Exceptional approach to family law. With patience and expertise, they resolved a very sensitive case. Thank you from the heart!',
-          author: 'Gordana Petrovic',
-          position: 'Client',
-          rating: 5,
-        },
-        {
-          text: 'In criminal law, they demonstrated incredible expertise. Our defense was precise and well-prepared.',
-          author: 'Stefan Nikolic',
-          position: 'Client',
-          rating: 5,
-        },
-        {
-          text: 'The company received the highest quality legal support. Their knowledge of corporate law is impressive.',
-          author: 'Dragana Djordjevic',
-          position: 'CEO, TechSolutions',
-          rating: 5,
-        },
-      ],
-    },
-
     // Blog/News
     blog: {
       heading: 'Legal News & Advice',
       subheading: 'Stay informed about changes in legislation',
       readMore: 'Read More',
       closeModal: 'Close',
+      imageAlt: 'Legal article about',
       articles: [
         {
           title: 'New Amendments to Labor Law 2025',
@@ -816,7 +756,7 @@ For help protecting your copyrights, contact our team of experts.`,
       list: [
         {
           q: 'How much does the first consultation cost?',
-          a: 'The initial assessment is usually a fixed fee of 5,000 RSD which is credited toward total costs if we proceed with your case. Consultations up to 30 minutes may be free for first-time clients.',
+          a: 'The first consultation is free.',
         },
         {
           q: 'What documents should I bring to the first consultation?',
@@ -927,15 +867,39 @@ For help protecting your copyrights, contact our team of experts.`,
   },
 };
 
-// Legacy exports for backward compatibility with existing components
-export const companyData = {
-  name: translations.sr.company.name,
-  address: translations.sr.company.address,
-  phone: translations.sr.company.phone,
-  email: translations.sr.company.email,
-  services: translations.sr.services.list,
-  stats: translations.sr.stats.items,
-};
+// Dev-only guard: the `sr` and `en` trees must stay structurally identical, since
+// components and SEO structured data map over shared shapes. This warns in the
+// console during development if a key exists in one language but not the other.
+// (Stripped from production builds — the `import.meta.env.DEV` branch is dead code
+// under `vite build` and gets tree-shaken away.)
+if (import.meta.env.DEV) {
+  const collectPaths = (node, prefix = '') => {
+    if (Array.isArray(node)) {
+      // Compare array length; recurse into the first element for shape.
+      const paths = [`${prefix}[len=${node.length}]`];
+      if (node.length > 0 && typeof node[0] === 'object' && node[0] !== null) {
+        paths.push(...collectPaths(node[0], `${prefix}[]`));
+      }
+      return paths;
+    }
+    if (node && typeof node === 'object') {
+      return Object.keys(node)
+        .sort()
+        .flatMap((key) => collectPaths(node[key], prefix ? `${prefix}.${key}` : key));
+    }
+    return [`${prefix}`];
+  };
 
-export const faqData = translations.sr.faqs.list;
-export const blogPosts = translations.sr.blog.articles;
+  const srPaths = collectPaths(translations.sr);
+  const enPaths = collectPaths(translations.en);
+  const onlyInSr = srPaths.filter((p) => !enPaths.includes(p));
+  const onlyInEn = enPaths.filter((p) => !srPaths.includes(p));
+
+  if (onlyInSr.length > 0 || onlyInEn.length > 0) {
+    console.warn(
+      '[content] sr/en translation trees are out of sync:\n' +
+        (onlyInSr.length ? `  Only in sr: ${onlyInSr.join(', ')}\n` : '') +
+        (onlyInEn.length ? `  Only in en: ${onlyInEn.join(', ')}` : '')
+    );
+  }
+}

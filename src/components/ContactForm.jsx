@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { useLang } from '../context/LanguageContext';
+import { useLang } from '../context/useLang';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Rate limiting: Track last submission time
@@ -99,6 +99,7 @@ const ContactForm = () => {
               style={{ position: 'absolute', left: '-9999px', opacity: 0 }}
               tabIndex="-1"
               autoComplete="off"
+              aria-hidden="true"
             />
 
             <div className="form-row">
@@ -179,8 +180,10 @@ const ContactForm = () => {
               className={`status-message ${
                 status === 'success' ? 'success' : status === 'rateLimit' ? 'warning' : 'error'
               }`}
+              role={status === 'success' ? 'status' : 'alert'}
+              aria-live={status === 'success' ? 'polite' : 'assertive'}
             >
-              <span className="status-icon">
+              <span className="status-icon" aria-hidden="true">
                 {status === 'success' ? '✓' : status === 'rateLimit' ? '⚠' : '✕'}
               </span>
               <p>

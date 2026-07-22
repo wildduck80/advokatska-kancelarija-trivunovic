@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLang } from '../context/LanguageContext';
+import { useLang } from '../context/useLang';
 
 const FAQ = () => {
   const { t } = useLang();
@@ -20,17 +20,27 @@ const FAQ = () => {
         <div className="faq-list">
           {t.faqs.list.map((item, index) => (
             <div key={index} className={`faq-item ${activeIndex === index ? 'active' : ''}`}>
+              <h3 className="faq-question-heading">
+                <button
+                  type="button"
+                  className="faq-question"
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={activeIndex === index}
+                  aria-controls={`faq-answer-${index}`}
+                  id={`faq-question-${index}`}
+                >
+                  <span className="faq-question-text">{item.q}</span>
+                  <span className="faq-icon" aria-hidden="true">
+                    {activeIndex === index ? '−' : '+'}
+                  </span>
+                </button>
+              </h3>
               <div
-                className="faq-question"
-                onClick={() => toggleFAQ(index)}
-                role="button"
-                tabIndex={0}
-                onKeyPress={(e) => e.key === 'Enter' && toggleFAQ(index)}
+                id={`faq-answer-${index}`}
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
+                className={`faq-answer ${activeIndex === index ? 'show' : ''}`}
               >
-                <h3>{item.q}</h3>
-                <span className="faq-icon">{activeIndex === index ? '−' : '+'}</span>
-              </div>
-              <div className={`faq-answer ${activeIndex === index ? 'show' : ''}`}>
                 <p>{item.a}</p>
               </div>
             </div>

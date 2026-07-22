@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLang } from '../context/LanguageContext';
+import { useLang } from '../context/useLang';
 
 const Navbar = () => {
   const { lang, t, toggleLanguage } = useLang();
@@ -17,7 +17,7 @@ const Navbar = () => {
         </div>
 
         {/* Links now have 'active' class and 'closeMenu' handler */}
-        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+        <ul id="primary-nav" className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <li>
             <a href="#" onClick={closeMenu}>
               {t.nav.home}
@@ -52,19 +52,28 @@ const Navbar = () => {
           {/* Language Toggle - visible in both desktop and mobile menu */}
           <li>
             <button
+              type="button"
               onClick={toggleLanguage}
               className="lang-btn"
+              aria-label={lang === 'sr' ? 'Switch to English' : 'Prebaci na srpski'}
               title={lang === 'sr' ? 'Switch to English' : 'Prebaci na srpski'}
             >
-              {lang === 'sr' ? '🇬🇧' : '🇷🇸'}
+              <span aria-hidden="true">{lang === 'sr' ? '🇬🇧' : '🇷🇸'}</span>
             </button>
           </li>
         </ul>
 
         <div className="nav-controls">
           {/* Hamburger Icon */}
-          <button className="mobile-menu-icon" onClick={toggleMenu}>
-            {isMenuOpen ? '✕' : '☰'}
+          <button
+            type="button"
+            className="mobile-menu-icon"
+            onClick={toggleMenu}
+            aria-label={t.nav.menu}
+            aria-expanded={isMenuOpen}
+            aria-controls="primary-nav"
+          >
+            <span aria-hidden="true">{isMenuOpen ? '✕' : '☰'}</span>
           </button>
         </div>
       </div>

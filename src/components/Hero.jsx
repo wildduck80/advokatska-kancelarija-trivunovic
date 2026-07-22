@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLang } from '../context/LanguageContext';
+import { useLang } from '../context/useLang';
 
 const Hero = () => {
   const { t } = useLang(); // Access translations

@@ -1,0 +1,53 @@
+/* --- 1. VARIABLES & RESET --- */
+:root {
+  --primary: #0a1428; /* Deep Midnight Navy */
+  --accent: #c5a059; /* Legal Gold */
+  --bg-light: #f4f7f9; /* Soft Grey-Blue Background */
+  --text-dark: #1a1a1a;
+  --text-muted: #555;
+  --white: #ffffff;
+  /* Darker gold that meets WCAG 4.5:1 contrast against white,
+     for text/icons/buttons on light surfaces. Use --accent only on navy. */
+  --accent-on-white: #7c5f1e;
+  --accent-on-white-hover: #64491a;
+  --transition: all 0.3s ease;
+}
+
+/* Skip link: visually hidden until focused (WCAG 2.4.1 Bypass Blocks) */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  z-index: 1000;
+  padding: 10px 18px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Respect the user's reduced-motion preference (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-fade-in,
+  .animate-slide-left,
+  .animate-slide-right,
+  .stagger-animation > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+

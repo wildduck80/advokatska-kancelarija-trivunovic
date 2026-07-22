@@ -1,0 +1,88 @@
+/* --- 3. HERO SECTION --- */
+.hero {
+  height: 90vh;
+  background:
+    linear-gradient(rgba(10, 20, 40, 0.7), rgba(10, 20, 40, 0.7)),
+    url('/images/kancelarija.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 16px 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Visible keyboard focus indicator (WCAG 2.4.7). Only shows for keyboard
+   users, not on mouse click, thanks to :focus-visible. */
+.cta-button:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+}
+
+.primary-btn {
+  background: var(--accent-on-white);
+  color: var(--white);
+}
+
+.primary-btn:hover {
+  background: var(--accent-on-white-hover);
+  transform: translateY(-2px);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+.outline-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  backdrop-filter: blur(10px);
+}
+
+.outline-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.outline-btn:active {
+  transform: translateY(0);
+}
+

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
-import { useLang } from '../context/LanguageContext';
+import { useLang } from '../context/useLang';
 
 const Map = lazy(() => import('./Map'));
 

@@ -1,0 +1,17 @@
+/* Aggregates the per-feature stylesheets. Import ORDER MATTERS: it reproduces
+   the original single-file cascade. `responsive.css` holds the global
+   mobile/tablet media queries and must stay last so its overrides win. */
+@import './base.css';
+@import './animations.css';
+@import './navbar.css';
+@import './hero.css';
+@import './services.css';
+@import './about.css';
+@import './blog.css';
+@import './faq.css';
+@import './team.css';
+@import './contact-form.css';
+@import './map.css';
+@import './footer.css';
+@import './floating.css';
+@import './responsive.css';

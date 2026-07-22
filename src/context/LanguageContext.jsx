@@ -1,7 +1,6 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { translations } from '../data/content';
-
-const LanguageContext = createContext();
+import { LanguageContext } from './language-context';
 
 // Get initial language from localStorage or default to Serbian
 const getInitialLanguage = () => {
@@ -36,5 +35,3 @@ export const LanguageProvider = ({ children }) => {
     </LanguageContext.Provider>
   );
 };
-
-export const useLang = () => useContext(LanguageContext);

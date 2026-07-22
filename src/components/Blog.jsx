@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLang } from '../context/LanguageContext';
+import { useLang } from '../context/useLang';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import ArticleModal from './ArticleModal';
 
@@ -38,7 +38,9 @@ const Blog = () => {
               <div className="blog-image">
                 <img
                   src={article.img}
-                  alt={`Legal article about ${article.category}`}
+                  alt={`${t.blog.imageAlt} ${article.category}`}
+                  width="400"
+                  height="240"
                   loading="lazy"
                 />
                 <span className="blog-category">{article.category}</span>

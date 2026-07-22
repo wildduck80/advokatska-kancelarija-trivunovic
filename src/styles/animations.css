@@ -1,0 +1,141 @@
+/* --- SCROLL ANIMATIONS --- */
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.animate-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.animate-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.animate-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.animate-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger animations for children */
+.stagger-animation > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.stagger-animation.visible > *:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.stagger-animation.visible > *:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.stagger-animation.visible > *:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.stagger-animation.visible > *:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.stagger-animation.visible > *:nth-child(5) {
+  transition-delay: 0.5s;
+}
+.stagger-animation.visible > *:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+.stagger-animation.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Clean for body */
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-color: var(--white);
+  width: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+}
+
+.app-container {
+  width: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.logo {
+  font-family: 'Playfair Display', serif; /* Elegant for headings */
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 100px 0;
+  width: 100%;
+}
+
