@@ -166,150 +166,119 @@ export const translations = {
       imageAlt: 'Pravni članak o temi',
       articles: [
         {
-          title: 'Nove Izmene Zakona o Radu 2025',
+          title: 'Istekao Rok za Upis po Zakonu „Svoj na Svome": Šta Sada?',
           excerpt:
-            'Analiziramo najvažnije izmene koje se odnose na radne ugovore, otpremnine i rad na daljinu.',
-          content: `Zakon o radu u Srbiji doživljava značajne izmene koje stupaju na snagu 2025. godine. Ove promene imaju za cilj modernizaciju radnog zakonodavstva i usklađivanje sa evropskim standardima.
+            'Naknadni rok za prijavu bespravno izgrađenih objekata istekao je 24. oktobra 2026. Objašnjavamo šta to znači za vlasnike i kupce nekretnina.',
+          content: `Zakon o posebnim uslovima za evidentiranje i upis prava na nepokretnostima („Sl. glasnik RS", br. 91/2025), poznat kao „Svoj na svome", zamenio je dosadašnji Zakon o ozakonjenju i omogućio jednostavniji i jeftiniji upis bespravno izgrađenih objekata u katastar.
 
-**Ključne izmene:**
+**Ključni rokovi**
+- Redovni rok za prijavu istekao je 5. februara 2026.
+- Naknadni rok, uz dokaz o opravdanim razlozima, istekao je 24. oktobra 2026.
 
-**1. Rad na daljinu**
-Nova regulativa preciznije definiše prava i obaveze zaposlenih koji rade od kuće. Poslodavci su sada obavezni da obezbede adekvatnu opremu i nadoknade troškove rada od kuće, uključujući internet i električnu energiju.
+**Ako ste podneli prijavu**
+Prijavu razmatra Agencija za prostorno planiranje i urbanizam. Kada utvrdi da su uslovi ispunjeni, Agencija izdaje potvrdu koju dostavlja katastru, a upis prava svojine sprovodi se prioritetno i bez plaćanja takse.
 
-**2. Otpremnine**
-Minimalna otpremnina povećana je sa jedne trećine na polovinu zarade po godini radnog staža. Ova izmena značajno poboljšava položaj zaposlenih u slučaju otkaza.
+Naknada se ne plaća unapred - Agencija naknadno dostavlja obaveštenje o iznosu. Za kuće i stanove naknada zavisi od veličine mesta (npr. od 100 do 500 evra u gradovima sa više od 100.000 stanovnika), a pojedine kategorije, poput primalaca socijalne pomoći, osoba sa invaliditetom i porodica sa troje i više dece, oslobođene su plaćanja.
 
-**3. Fleksibilno radno vreme**
-Uvedena je mogućnost fleksibilnog radnog vremena za roditelje dece do 8 godina starosti. Zaposleni mogu zahtevati prilagođavanje početka i kraja radnog vremena.
+Status upisa možete pratiti preko servisa eKatastar.
 
-**4. Digitalni ugovori**
-Omogućeno je zaključivanje ugovora o radu u elektronskoj formi sa kvalifikovanim elektronskim potpisom, što značajno ubrzava proces zapošljavanja.
+**Ako prijavu niste podneli**
+Objekat koji nije upisan nema uredno upisano pravo svojine, što u praksi otežava prodaju, zasnivanje hipoteke i nasleđivanje. Ako ste propustili rok, preporučujemo da se što pre posavetujete sa advokatom o mogućnostima u vašem konkretnom slučaju.
 
-**Preporuke za poslodavce:**
-- Revidirajte postojeće ugovore o radu
-- Ažurirajte pravilnike o radu
-- Pripremite politike za rad na daljinu
-- Konsultujte se sa pravnim stručnjacima
+**Važno za stare predmete ozakonjenja**
+Za sve predmete u kojima rešenje o ozakonjenju nije doneto do 24. oktobra 2025. bilo je potrebno podneti novu prijavu po novom zakonu, jer su dotadašnji postupci prekinuti.
 
-Za detaljniju analizu kako ove izmene utiču na vašu situaciju, kontaktirajte našu kancelariju za besplatne konsultacije.`,
-          date: '15. Decembar 2024',
-          isoDate: '2024-12-15',
-          category: 'Radno Pravo',
-          img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800',
-        },
-        {
-          title: 'Postupak Kupovine Nekretnine: Vodič za Kupce',
-          excerpt:
-            'Korak po korak objašnjenje svih pravnih aspekata kupovine stana ili kuće u Srbiji.',
-          content: `Kupovina nekretnine je jedna od najvažnijih finansijskih odluka u životu. Ovaj vodič vam pomaže da razumete sve pravne aspekte procesa i izbegnete potencijalne probleme.
+**Saveti za kupce nekretnina**
+- Pre kupovine obavezno proverite list nepokretnosti u katastru
+- Proverite da li je objekat upisan i da li postoje tereti ili zabeležbe
+- Ne isplaćujte kaparu dok advokat ne pregleda dokumentaciju
 
-**Faza 1: Priprema**
+Kontaktirajte našu kancelariju za proveru statusa vaše nepokretnosti ili pravnu pomoć pri kupoprodaji.
 
-Pre nego što počnete sa pretragom nekretnina, potrebno je:
-- Proveriti svoju kreditnu sposobnost
-- Obezbediti predugovor za kredit (ako je potreban)
-- Angažovati advokata za nekretnine
-
-**Faza 2: Provera nekretnine**
-
-**Provera vlasništva**
-Neophodno je izvršiti uvid u list nepokretnosti u katastru. Proverite:
-- Ko je upisani vlasnik
-- Da li postoje tereti (hipoteke, službenosti)
-- Da li postoje sudski sporovi
-
-**Provera urbanističkog statusa**
-- Da li je objekat legalan
-- Da li postoji građevinska i upotrebna dozvola
-- Kakav je urbanistički plan za tu lokaciju
-
-**Faza 3: Predugovor**
-
-Predugovor o kupoprodaji definiše:
-- Cenu i način plaćanja
-- Rokove za ispunjenje obaveza
-- Kaparu (obično 10% vrednosti)
-- Uslove raskida
-
-**Faza 4: Glavni ugovor**
-
-Ugovor o kupoprodaji nepokretnosti mora biti:
-- Sačinjen u pisanoj formi
-- Overen kod javnog beležnika
-- Potpisan od obe strane
-
-**Faza 5: Uknjižba**
-
-Nakon potpisivanja ugovora, potrebno je:
-- Podneti zahtev za uknjižbu u katastru
-- Platiti porez na prenos apsolutnih prava (2.5%)
-- Prijaviti promenu vlasništva komunalnim službama
-
-**Naši saveti:**
-- Nikada ne plaćajte pre provere dokumentacije
-- Insistirajte na clausuli o oslobađanju nekretnine od tereta
-- Čuvajte sve dokaze o plaćanju
-
-Kontaktirajte nas za pravnu pomoć u procesu kupovine nekretnine.`,
-          date: '8. Decembar 2024',
-          isoDate: '2024-12-08',
+Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
+          date: '10. Novembar 2026',
+          isoDate: '2026-11-10',
           category: 'Nekretnine',
           img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800',
         },
         {
-          title: 'Zaštita Autorskih Prava u Digitalnom Dobu',
+          title: 'Novi Zakon o Zaštiti Potrošača: Nova Pravila za Reklamacije',
           excerpt:
-            'Kako zaštititi vaš kreativni rad na internetu i koje mere možete preduzeti protiv kršenja prava.',
-          content: `U eri interneta, zaštita intelektualne svojine postaje sve veći izazov. Ovaj članak objašnjava kako možete zaštititi svoj kreativni rad i šta učiniti kada neko prekrši vaša prava.
+            'Od 2. avgusta 2026. primenjuju se nova pravila za reklamacije. Šta se promenilo za kupce, a šta za trgovce?',
+          content: `Novi Zakon o zaštiti potrošača („Sl. glasnik RS", br. 35/2026) stupio je na snagu 1. maja 2026, a u celini se primenjuje od 2. avgusta 2026. godine. Najviše promena odnosi se na reklamacije robe sa nedostatkom.
 
-**Šta su autorska prava?**
+**Šta se menja za kupce**
 
-Autorska prava štite originalna dela kao što su:
-- Tekstovi i knjige
-- Fotografije i ilustracije
-- Muzika i video sadržaji
-- Softver i aplikacije
-- Dizajn i grafika
+**1. Slobodan izbor u prvih 30 dana**
+Ako se nedostatak pojavi u roku od 30 dana od isporuke, kupac može odmah da bira između zamene, umanjenja cene ili raskida ugovora. Ranije je ovaj rok iznosio šest meseci.
 
-Autorsko pravo nastaje automatski u trenutku stvaranja dela - registracija nije obavezna, ali može biti korisna kao dokaz.
+**2. Nakon 30 dana - prvo popravka ili zamena**
+Posle isteka tog roka kupac najpre traži popravku ili zamenu. Umanjenje cene ili raskid ugovora moguć je ako trgovac ne otkloni nedostatak, odbije da to učini ili je nedostatak značajan.
 
-**Kako zaštititi svoj rad online?**
+**3. Rok od dva meseca za prijavu nedostatka**
+Kupac je dužan da trgovca obavesti o nedostatku u roku od dva meseca od kada ga je uočio, a najkasnije u roku od dve godine od isporuke.
 
-**1. Vodeni žigovi (Watermarks)**
-Dodajte vodeni žig na fotografije i grafiku. Ovo otežava neovlašćeno korišćenje i služi kao dokaz vlasništva.
+**4. Pretpostavka nesaobraznosti produžena na godinu dana**
+Ako se nedostatak pojavi u roku od 12 meseci od isporuke (ranije šest meseci), pretpostavlja se da je postojao u trenutku isporuke - trgovac mora dokazati suprotno.
 
-**2. Metapodaci**
-Ugrađujte informacije o autorstvu u digitalne fajlove. Mnogi formati podržavaju EXIF i IPTC podatke.
+**Obaveze trgovaca**
+- Odgovor na reklamaciju u pisanoj ili elektronskoj formi u roku od 8 dana
+- Rešavanje reklamacije u roku od 15 dana, odnosno 30 dana za tehničku robu i nameštaj
+- Produženje roka moguće je samo jednom i samo uz saglasnost kupca
+- Nedostatak originalne ambalaže ne može biti razlog za odbijanje reklamacije
 
-**3. Registracija dela**
-Iako nije obavezna, registracija kod nadležnog organa pruža dodatnu pravnu zaštitu i olakšava dokazivanje vlasništva.
+**Važno:** Za robu kupljenu pre 2. avgusta 2026. i dalje važe pravila prethodnog zakona.
 
-**4. Creative Commons licence**
-Ako želite da dozvolite određeno korišćenje, koristite CC licence da jasno definišete uslove.
+**Preporuke za trgovce:**
+- Uskladite interne procedure za reklamacije
+- Ažurirajte opšte uslove prodaje i internet prodavnice
+- Obučite zaposlene koji primaju reklamacije
 
-**Šta učiniti kada neko prekrši vaša prava?**
+Za usklađivanje poslovanja sa novim zakonom ili pomoć u sporu sa trgovcem, obratite se našoj kancelariji.
 
-**Korak 1: Dokumentujte povredu**
-- Napravite screenshot
-- Sačuvajte URL adresu
-- Zabeležite datum i vreme
-
-**Korak 2: Pošaljite zahtev za uklanjanje**
-Kontaktirajte platformu sa DMCA zahtevom ili direktno prekršioca sa opomenom pred tužbu.
-
-**Korak 3: Pravna akcija**
-Ako prethodni koraci ne urode plodom, možete pokrenuti sudski postupak za naknadu štete.
-
-**Kazne za kršenje autorskih prava:**
-- Novčane kazne do 500.000 dinara
-- Naknada štete autoru
-- U težim slučajevima, krivična odgovornost
-
-Za pomoć u zaštiti vaših autorskih prava, obratite se našem timu stručnjaka.`,
-          date: '1. Decembar 2024',
-          isoDate: '2024-12-01',
-          category: 'Intelektualna Svojina',
+Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
+          date: '10. Novembar 2026',
+          isoDate: '2026-11-10',
+          category: 'Zaštita Potrošača',
           img: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800',
+        },
+        {
+          title: 'eBolovanje: Obavezno i za Preduzetnike od 1. Januara 2027.',
+          excerpt:
+            'Papirne doznake su prošlost. Preduzetnici koji imaju zaposlene moraju da se uključe u sistem eBolovanje do početka 2027. godine.',
+          content: `Zakon o razmeni podataka, dokumenata i obaveštenja u slučaju nastupanja privremene sprečenosti za rad korišćenjem softverskog rešenja „eBolovanje - Poslodavac" („Sl. glasnik RS", br. 109/2025) uveo je potpuno elektronsku razmenu podataka o bolovanju između lekara, RFZO i poslodavaca.
+
+**Faze primene**
+- **Od 1. januara 2026.** - sistem je obavezan za privredna društva i javni sektor
+- **Od 1. aprila 2026.** - komunikacija poslodavaca sa RFZO (zahtevi za obračun i refundaciju naknade zarade) odvija se isključivo elektronski
+- **Od 1. januara 2027.** - sistem postaje obavezan i za preduzetnike koji imaju zaposlene
+
+Poslodavci koji nemaju nijednog zaposlenog nemaju ovu obavezu.
+
+**Šta to znači za zaposlene**
+Zaposleni više ne moraju da poslodavcu donose papirne potvrde i doznake o bolovanju - poslodavac podatke dobija direktno kroz sistem.
+
+**Šta poslodavac treba da uradi**
+- Registruje se na Portalu eUprava (putem aplikacije ConsentID ili kvalifikovanog elektronskog sertifikata)
+- Pristupi sistemu eBolovanje - Poslodavac i redovno ga koristi
+- Omogući pristup zaposlenima u kadrovskoj službi i računovodstvu
+- Uskladi interne procedure i pravilnike o evidenciji odsustva
+
+**Kazne**
+Za poslodavce koji ne koriste sistem propisane su novčane kazne:
+- pravno lice: od 50.000 do 200.000 dinara
+- odgovorno lice: od 5.000 do 25.000 dinara
+- preduzetnik: od 10.000 do 50.000 dinara
+
+**Savet:** Preduzetnici ne moraju da čekaju 1. januar - sistemu se može pristupiti i ranije, dobrovoljno, što ostavlja vreme da se procedure uhodaju.
+
+Za pomoć u usklađivanju radnopravne dokumentacije kontaktirajte našu kancelariju.
+
+Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
+          date: '10. Novembar 2026',
+          isoDate: '2026-11-10',
+          category: 'Radno Pravo',
+          img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800',
         },
       ],
     },
@@ -601,150 +570,119 @@ Za pomoć u zaštiti vaših autorskih prava, obratite se našem timu stručnjaka
       imageAlt: 'Legal article about',
       articles: [
         {
-          title: 'New Amendments to Labor Law 2025',
+          title: 'The "Svoj na Svome" Registration Deadline Has Passed: What Now?',
           excerpt:
-            'Analyzing the most important changes related to employment contracts, severance pay, and remote work.',
-          content: `Serbia's Labor Law is undergoing significant amendments that come into effect in 2025. These changes aim to modernize labor legislation and align it with European standards.
+            'The extended deadline for registering unpermitted buildings expired on 24 October 2026. Here is what it means for owners and buyers.',
+          content: `The Law on Special Conditions for Recording and Registering Rights to Real Estate (Official Gazette of RS, No. 91/2025), known as "Svoj na svome", replaced the previous Legalization Law and introduced a simpler and cheaper way to enter unpermitted buildings into the land registry.
 
-**Key Amendments:**
+**Key Deadlines**
+- The regular application deadline expired on 5 February 2026.
+- The extended deadline, available with proof of justified reasons, expired on 24 October 2026.
 
-**1. Remote Work**
-New regulations more precisely define the rights and obligations of employees working from home. Employers are now required to provide adequate equipment and reimburse work-from-home costs, including internet and electricity.
+**If You Applied**
+Applications are reviewed by the Agency for Spatial Planning and Urbanism. Once it confirms the conditions are met, the Agency issues a certificate and sends it to the cadastre, where ownership is registered as a priority and free of fees.
 
-**2. Severance Pay**
-The minimum severance has been increased from one-third to one-half of salary per year of service. This amendment significantly improves employees' position in case of termination.
+The registration charge is not paid in advance - the Agency sends a notice of the amount afterwards. For houses and apartments the charge depends on the size of the town (e.g. EUR 100 to 500 in cities with more than 100,000 residents), and certain groups, such as social assistance recipients, persons with disabilities and families with three or more children, are exempt.
 
-**3. Flexible Working Hours**
-The possibility of flexible working hours has been introduced for parents of children up to 8 years of age. Employees can request adjustment of start and end times.
+You can track the status of your registration through the eKatastar service.
 
-**4. Digital Contracts**
-Employment contracts can now be concluded electronically with a qualified electronic signature, significantly speeding up the hiring process.
+**If You Did Not Apply**
+A building that is not registered has no properly recorded ownership, which in practice makes selling, mortgaging and inheriting it difficult. If you missed the deadline, we recommend speaking with a lawyer as soon as possible about the options in your specific case.
 
-**Recommendations for Employers:**
-- Review existing employment contracts
-- Update internal work regulations
-- Prepare remote work policies
-- Consult with legal experts
+**Pending Legalization Cases**
+Any case in which no legalization decision had been issued by 24 October 2025 required a new application under the new law, as earlier proceedings were suspended.
 
-For a more detailed analysis of how these changes affect your situation, contact our office for free consultations.`,
-          date: 'December 15, 2024',
-          isoDate: '2024-12-15',
-          category: 'Labor Law',
-          img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800',
-        },
-        {
-          title: "Real Estate Purchase Process: Buyer's Guide",
-          excerpt:
-            'Step-by-step explanation of all legal aspects of buying an apartment or house in Serbia.',
-          content: `Buying real estate is one of the most important financial decisions in life. This guide helps you understand all legal aspects of the process and avoid potential problems.
+**Tips for Property Buyers**
+- Always check the title deed (list nepokretnosti) in the cadastre before buying
+- Confirm the building is registered and whether there are any encumbrances or notes
+- Do not pay a deposit until a lawyer has reviewed the documents
 
-**Phase 1: Preparation**
+Contact our office to check the status of your property or for legal help with a purchase or sale.
 
-Before you start searching for properties, you need to:
-- Check your creditworthiness
-- Secure a loan pre-approval (if needed)
-- Hire a real estate lawyer
-
-**Phase 2: Property Verification**
-
-**Ownership Check**
-It is essential to review the property register at the cadastre. Check:
-- Who is the registered owner
-- Whether there are encumbrances (mortgages, easements)
-- Whether there are ongoing court disputes
-
-**Urban Planning Status Check**
-- Is the building legal
-- Is there a construction and occupancy permit
-- What is the urban plan for the location
-
-**Phase 3: Pre-Contract**
-
-The pre-contract defines:
-- Price and payment method
-- Deadlines for fulfilling obligations
-- Deposit (usually 10% of value)
-- Termination conditions
-
-**Phase 4: Main Contract**
-
-The real estate purchase contract must be:
-- Made in written form
-- Notarized by a public notary
-- Signed by both parties
-
-**Phase 5: Registration**
-
-After signing the contract, you need to:
-- Submit a registration request to the cadastre
-- Pay the property transfer tax (2.5%)
-- Report the ownership change to utility services
-
-**Our Advice:**
-- Never pay before verifying documentation
-- Insist on a clause for clearing the property of encumbrances
-- Keep all proof of payment
-
-Contact us for legal assistance in the property purchase process.`,
-          date: 'December 8, 2024',
-          isoDate: '2024-12-08',
+This article is for information only and does not constitute legal advice.`,
+          date: 'November 10, 2026',
+          isoDate: '2026-11-10',
           category: 'Real Estate',
           img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800',
         },
         {
-          title: 'Copyright Protection in the Digital Age',
+          title: 'New Consumer Protection Law: New Rules for Complaints',
           excerpt:
-            'How to protect your creative work online and what measures you can take against infringement.',
-          content: `In the internet era, protecting intellectual property is becoming an increasing challenge. This article explains how you can protect your creative work and what to do when someone violates your rights.
+            'New rules for complaints about defective goods apply from 2 August 2026. What has changed for buyers and for traders?',
+          content: `Serbia's new Consumer Protection Law (Official Gazette of RS, No. 35/2026) entered into force on 1 May 2026 and has applied in full since 2 August 2026. The biggest changes concern complaints about defective goods.
 
-**What are Copyrights?**
+**What Changes for Buyers**
 
-Copyrights protect original works such as:
-- Texts and books
-- Photographs and illustrations
-- Music and video content
-- Software and applications
-- Design and graphics
+**1. Free Choice in the First 30 Days**
+If a defect appears within 30 days of delivery, the buyer can immediately choose between replacement, a price reduction or terminating the contract. Previously this period was six months.
 
-Copyright arises automatically at the moment of creation - registration is not mandatory but can be useful as evidence.
+**2. After 30 Days - Repair or Replacement First**
+After that period, the buyer first asks for repair or replacement. A price reduction or termination is possible if the trader fails to fix the defect, refuses to do so, or the defect is significant.
 
-**How to Protect Your Work Online?**
+**3. Two Months to Report a Defect**
+The buyer must notify the trader within two months of discovering the defect, and no later than two years after delivery.
 
-**1. Watermarks**
-Add watermarks to photographs and graphics. This makes unauthorized use more difficult and serves as proof of ownership.
+**4. Presumption of Non-Conformity Extended to One Year**
+If a defect appears within 12 months of delivery (previously six months), it is presumed to have existed at delivery - the trader must prove otherwise.
 
-**2. Metadata**
-Embed authorship information in digital files. Many formats support EXIF and IPTC data.
+**Obligations of Traders**
+- Respond to a complaint in writing or electronically within 8 days
+- Resolve the complaint within 15 days, or 30 days for technical goods and furniture
+- The deadline can be extended only once, and only with the buyer's consent
+- Missing original packaging cannot be a reason to reject a complaint
 
-**3. Work Registration**
-Although not mandatory, registration with the competent authority provides additional legal protection and facilitates proof of ownership.
+**Important:** Goods bought before 2 August 2026 remain subject to the rules of the previous law.
 
-**4. Creative Commons Licenses**
-If you want to allow certain uses, use CC licenses to clearly define the terms.
+**Recommendations for Traders:**
+- Align your internal complaint procedures
+- Update your general terms of sale and online shop terms
+- Train staff who handle complaints
 
-**What to Do When Someone Violates Your Rights?**
+For help bringing your business into line with the new law, or with a dispute with a trader, contact our office.
 
-**Step 1: Document the Violation**
-- Take a screenshot
-- Save the URL
-- Record the date and time
-
-**Step 2: Send a Takedown Request**
-Contact the platform with a DMCA request or directly contact the infringer with a cease and desist letter.
-
-**Step 3: Legal Action**
-If previous steps don't work, you can initiate court proceedings for damages.
-
-**Penalties for Copyright Infringement:**
-- Fines up to 500,000 dinars
-- Compensation to the author
-- In severe cases, criminal liability
-
-For help protecting your copyrights, contact our team of experts.`,
-          date: 'December 1, 2024',
-          isoDate: '2024-12-01',
-          category: 'Intellectual Property',
+This article is for information only and does not constitute legal advice.`,
+          date: 'November 10, 2026',
+          isoDate: '2026-11-10',
+          category: 'Consumer Protection',
           img: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800',
+        },
+        {
+          title: 'eBolovanje: Mandatory for Sole Traders from 1 January 2027',
+          excerpt:
+            'Paper sick notes are a thing of the past. Sole traders with employees must join the eBolovanje system by the start of 2027.',
+          content: `The Law on the Exchange of Data, Documents and Notices in Case of Temporary Incapacity for Work Using the "eBolovanje - Employer" Software (Official Gazette of RS, No. 109/2025) introduced a fully electronic exchange of sick-leave data between doctors, the Republic Health Insurance Fund (RFZO) and employers.
+
+**Implementation Phases**
+- **From 1 January 2026** - mandatory for companies and the public sector
+- **From 1 April 2026** - employers' communication with the RFZO (requests for calculation and refund of sick pay) is electronic only
+- **From 1 January 2027** - mandatory for sole traders (preduzetnici) who have employees
+
+Employers with no employees are not covered by this obligation.
+
+**What It Means for Employees**
+Employees no longer need to bring paper sick-leave certificates to their employer - the employer receives the data directly through the system.
+
+**What Employers Need to Do**
+- Register on the eUprava portal (using the ConsentID app or a qualified electronic certificate)
+- Access the eBolovanje - Employer system and use it regularly
+- Give access to HR and accounting staff
+- Update internal procedures and absence-tracking rules
+
+**Fines**
+Employers who fail to use the system face fines of:
+- legal entity: RSD 50,000 to 200,000
+- responsible person: RSD 5,000 to 25,000
+- sole trader: RSD 10,000 to 50,000
+
+**Tip:** Sole traders do not have to wait until 1 January - they can join the system voluntarily now, which leaves time to get procedures running smoothly.
+
+For help bringing your employment documentation into compliance, contact our office.
+
+This article is for information only and does not constitute legal advice.`,
+          date: 'November 10, 2026',
+          isoDate: '2026-11-10',
+          category: 'Labor Law',
+          img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800',
         },
       ],
     },
