@@ -1,55 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Single-page site: section anchors (#about etc.) are ignored by crawlers, so only
+     the two language URLs are listed. Keep in sync with src/data/site.js. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Homepage -->
   <url>
-    <loc>https://trifunovic-law.com/</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="sr" href="https://trifunovic-law.com/?lang=sr"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://trifunovic-law.com/?lang=en"/>
+    <loc>https://trivunovic-law.rs/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://trivunovic-law.rs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://trivunovic-law.rs/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://trivunovic-law.rs/"/>
   </url>
-
-  <!-- About Section -->
   <url>
-    <loc>https://trifunovic-law.com/#about</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://trivunovic-law.rs/?lang=en</loc>
+    <lastmod>2026-11-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://trivunovic-law.rs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://trivunovic-law.rs/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://trivunovic-law.rs/"/>
   </url>
-
-  <!-- Services Section -->
-  <url>
-    <loc>https://trifunovic-law.com/#services</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Team Section -->
-  <url>
-    <loc>https://trifunovic-law.com/#team</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Blog Section -->
-  <url>
-    <loc>https://trifunovic-law.com/#blog</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Contact Section -->
-  <url>
-    <loc>https://trifunovic-law.com/#contact-form</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
 </urlset>

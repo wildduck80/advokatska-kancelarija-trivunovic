@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import { useLang } from '../context/useLang';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import L from 'leaflet';
+import { OFFICE_COORDINATES } from '../data/site';
 
 // Fix for default marker icon in React-Leaflet (self-hosted icons)
 delete L.Icon.Default.prototype._getIconUrl;
@@ -18,9 +19,7 @@ const Map = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: containerRef, isVisible: containerVisible } = useScrollAnimation();
 
-  // Coordinates for Rade Kondića 116a, 21410 Futog, Serbia
-  // Futog center coordinates on Rade Kondića street
-  const position = [45.242287, 19.718783]; // [latitude, longitude]
+  const position = [OFFICE_COORDINATES.latitude, OFFICE_COORDINATES.longitude];
 
   return (
     <section className="map-section">

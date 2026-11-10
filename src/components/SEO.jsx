@@ -1,10 +1,25 @@
 import React from 'react';
 import { Helmet } from '@dr.pogodin/react-helmet';
 import { useLang } from '../context/useLang';
+import { buildLanguageUrl, toHtmlLang } from '../context/language';
+import {
+  GEO_REGION,
+  LOGO_URL,
+  OFFICE_COORDINATES,
+  OG_IMAGE_URL,
+  POSTAL_ADDRESS,
+  SITE_URL,
+} from '../data/site';
+
+const HOME_URL = `${SITE_URL}/`;
+const GEO = { '@type': 'GeoCoordinates', ...OFFICE_COORDINATES };
+const ADDRESS = { '@type': 'PostalAddress', ...POSTAL_ADDRESS };
+const GEO_POSITION = `${OFFICE_COORDINATES.latitude};${OFFICE_COORDINATES.longitude}`;
 
 const SEO = () => {
   const { lang, t } = useLang();
-  const siteUrl = 'https://trivunovic-law.rs';
+  const siteUrl = SITE_URL;
+  const pageUrl = buildLanguageUrl(HOME_URL, lang);
 
   // Structured Data: Organization
   const organizationSchema = {
@@ -13,26 +28,16 @@ const SEO = () => {
     '@id': `${siteUrl}/#organization`,
     name: t.company.name,
     url: siteUrl,
-    logo: `${siteUrl}/logo.png`,
-    image: `${siteUrl}/og-image.jpg`,
+    logo: LOGO_URL,
+    image: OG_IMAGE_URL,
     description:
       lang === 'sr'
         ? 'Advokatska kancelarija Trivunovic pruža vrhunske pravne usluge u Futog-u.Specijalizovani smo za građansko, krivično, porodično i radno pravo.'
         : 'Trivunovic Law Firm provides top-quality legal services in Futog. We specialize in civil, criminal, family, and labor law.',
     telephone: t.company.phone,
     email: t.company.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Rade Kondića 116a',
-      addressLocality: 'Futog',
-      postalCode: '21410',
-      addressCountry: 'RS',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 45.242287,
-      longitude: 19.718783,
-    },
+    address: ADDRESS,
+    geo: GEO,
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -57,21 +62,10 @@ const SEO = () => {
     '@type': 'Attorney',
     '@id': `${siteUrl}/#localbusiness`,
     name: t.company.name,
-    image: `${siteUrl}/og-image.jpg`,
+    image: OG_IMAGE_URL,
     priceRange: '$$',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Rade Kondića 116a',
-      addressLocality: 'Futog',
-      addressRegion: 'Vojvodina',
-      postalCode: '21410',
-      addressCountry: 'RS',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 45.242287,
-      longitude: 19.718783,
-    },
+    address: ADDRESS,
+    geo: GEO,
     url: siteUrl,
     telephone: t.company.phone,
     email: t.company.email,
@@ -83,11 +77,6 @@ const SEO = () => {
         closes: '16:00',
       },
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '24',
-    },
   };
 
   // Structured Data: Services
@@ -167,7 +156,7 @@ const SEO = () => {
       name: t.company.name,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/logo.png`,
+        url: LOGO_URL,
       },
     },
     mainEntityOfPage: {
@@ -195,48 +184,45 @@ const SEO = () => {
   return (
     <Helmet>
       {/* Primary Meta Tags */}
-      <html lang={lang === 'sr' ? 'sr-Latn-RS' : 'en'} />
+      <html lang={toHtmlLang(lang)} />
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content={t.company.name} />
-      <link rel="canonical" href={siteUrl} />
+      <link rel="canonical" href={pageUrl} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={siteUrl} />
+      <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+      <meta property="og:image" content={OG_IMAGE_URL} />
       <meta property="og:locale" content={lang === 'sr' ? 'sr_RS' : 'en_US'} />
       <meta property="og:site_name" content={t.company.name} />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={siteUrl} />
+      <meta property="twitter:url" content={pageUrl} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={`${siteUrl}/og-image.jpg`} />
+      <meta property="twitter:image" content={OG_IMAGE_URL} />
 
       {/* Hreflang for multilingual */}
-      <link rel="alternate" hrefLang="sr" href={`${siteUrl}?lang=sr`} />
-      <link rel="alternate" hrefLang="en" href={`${siteUrl}?lang=en`} />
-      <link rel="alternate" hrefLang="x-default" href={siteUrl} />
+      <link rel="alternate" hrefLang="sr" href={buildLanguageUrl(HOME_URL, 'sr')} />
+      <link rel="alternate" hrefLang="en" href={buildLanguageUrl(HOME_URL, 'en')} />
+      <link rel="alternate" hrefLang="x-default" href={HOME_URL} />
 
       {/* Additional SEO */}
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="language" content={lang === 'sr' ? 'Serbian' : 'English'} />
-      <meta name="revisit-after" content="7 days" />
 
       {/* Geographic Meta Tags for Local SEO */}
-      <meta name="geo.region" content="RS-VO" />
+      <meta name="geo.region" content={GEO_REGION} />
       <meta name="geo.placename" content="Futog" />
-      <meta name="geo.position" content="45.242287;19.718783" />
-      <meta name="ICBM" content="45.242287, 19.718783" />
+      <meta name="geo.position" content={GEO_POSITION} />
+      <meta name="ICBM" content={GEO_POSITION.replace(';', ', ')} />
 
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
