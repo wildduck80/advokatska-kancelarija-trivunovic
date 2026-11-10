@@ -96,7 +96,11 @@ const ArticleModal = ({ article, isOpen, onClose }) => {
       // Split on **bold** segments, keeping the captured groups
       const parts = text.split(/\*\*(.*?)\*\*/g);
       return parts.map((part, i) =>
-        i % 2 === 1 ? <strong key={i}>{part}</strong> : <React.Fragment key={i}>{part}</React.Fragment>
+        i % 2 === 1 ? (
+          <strong key={i}>{part}</strong>
+        ) : (
+          <React.Fragment key={i}>{part}</React.Fragment>
+        )
       );
     };
 

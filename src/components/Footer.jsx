@@ -78,10 +78,10 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="#contact-form"
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection('contact');
+                    scrollToSection('contact-form');
                   }}
                 >
                   {t.nav.contact}

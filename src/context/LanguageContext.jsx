@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { translations } from '../data/content';
 import { LanguageContext } from './language-context';
+import {
+  buildLanguageUrl,
+  readStoredLanguage,
+  resolveInitialLanguage,
+  toHtmlLang,
+  writeStoredLanguage,
+} from './language';
 
-// Get initial language from localStorage or default to Serbian
 const getInitialLanguage = () => {
-  if (typeof window !== 'undefined') {
-    const savedLang = localStorage.getItem('preferredLanguage');
-    return savedLang || 'sr';
-  }
-  return 'sr';
+  if (typeof window === 'undefined') return resolveInitialLanguage();
+  return resolveInitialLanguage({
+    search: window.location.search,
+    storedLanguage: readStoredLanguage(window.localStorage),
+  });
 };
 
 export const LanguageProvider = ({ children }) => {
@@ -16,13 +22,15 @@ export const LanguageProvider = ({ children }) => {
 
   const t = translations[lang];
 
-  // Update <html lang> attribute and persist to localStorage
   useEffect(() => {
-    // Update HTML lang attribute
-    document.documentElement.lang = lang === 'sr' ? 'sr-Latn-RS' : 'en';
+    document.documentElement.lang = toHtmlLang(lang);
+    writeStoredLanguage(window.localStorage, lang);
 
-    // Persist to localStorage
-    localStorage.setItem('preferredLanguage', lang);
+    // Keep the address bar on the same URL search engines index for this language.
+    const nextUrl = buildLanguageUrl(window.location.href, lang);
+    if (nextUrl !== window.location.href) {
+      window.history.replaceState(window.history.state, '', nextUrl);
+    }
   }, [lang]);
 
   const toggleLanguage = () => {

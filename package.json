@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,css}\"",
-    "format:check": "prettier --check \"src/**/*.{js,jsx,css}\""
+    "format:check": "prettier --check \"src/**/*.{js,jsx,css}\"",
+    "test": "vitest run"
   },
   "dependencies": {
     "@dr.pogodin/react-helmet": "^3.0.5",
@@ -32,6 +33,7 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "prettier": "^3.7.4",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vitest": "^5.1.0"
   }
 }

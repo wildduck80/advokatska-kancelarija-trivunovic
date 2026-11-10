@@ -7,10 +7,7 @@ import { useEffect, useRef, useState } from 'react';
  * @param {string} [options.rootMargin='0px 0px -50px 0px'] - IntersectionObserver rootMargin
  * @returns {{ ref: React.RefObject, isVisible: boolean }}
  */
-export const useScrollAnimation = ({
-  threshold = 0.1,
-  rootMargin = '0px 0px -50px 0px',
-} = {}) => {
+export const useScrollAnimation = ({ threshold = 0.1, rootMargin = '0px 0px -50px 0px' } = {}) => {
   const elementRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
