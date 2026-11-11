@@ -30,3 +30,9 @@ dist-ssr
 
 # Claude
 .claude/*
+
+# Internal notes & AI tooling (kept locally, not published)
+CLAUDE.md
+.serena/
+Portal.md
+DEPLOYMENT_CHECKLIST.md
