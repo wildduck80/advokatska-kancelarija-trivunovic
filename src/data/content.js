@@ -1,8 +1,12 @@
-// Complete bilingual content structure for Trifunovic Law Firm
+// Complete bilingual content structure for Trivunović Law Firm
 // Mirrors aktodorovic.rs architecture with unique, contextually similar content
+
+import { privacy } from './privacy';
 
 export const translations = {
   sr: {
+    privacy: privacy.sr,
+
     seo: {
       title: 'Advokatska Kancelarija Trivunović - Advokat Futog | Pravne Usluge',
       description:
@@ -363,7 +367,8 @@ Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
         errorMessage:
           'Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovo ili nas kontaktirajte direktno.',
         privacyNotice:
-          'Slanjem ovog formulara, prihvatate našu Politiku privatnosti. Vaši podaci će biti korišćeni isključivo za kontaktiranje u vezi sa vašim upitom i neće biti deljeni sa trećim stranama.',
+          'Podatke iz formulara koristimo isključivo da bismo odgovorili na vaš upit. Kako ih obrađujemo, pročitajte u našoj',
+        privacyLink: 'Politici privatnosti',
         rateLimitError:
           'Prečesto šaljete poruke. Molimo sačekajte nekoliko minuta pre ponovnog slanja.',
       },
@@ -408,7 +413,7 @@ Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
         title: 'Kontakt',
       },
       bottom: {
-        copyright: '© 2025 Advokatska Kancelarija Trifunović. Sva prava zadržana.',
+        copyright: '© 2026 Advokatska Kancelarija Trivunović. Sva prava zadržana.',
         privacy: 'Politika Privatnosti',
         terms: 'Uslovi Korišćenja',
       },
@@ -428,6 +433,8 @@ Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
 
   // ENGLISH VERSION
   en: {
+    privacy: privacy.en,
+
     seo: {
       title: 'Trivunović Law Firm - Lawyer Futog | Legal Services',
       description:
@@ -789,7 +796,8 @@ This article is for information only and does not constitute legal advice.`,
         errorMessage:
           'An error occurred while sending your message. Please try again or contact us directly.',
         privacyNotice:
-          'By submitting this form, you accept our Privacy Policy. Your data will be used exclusively to contact you regarding your inquiry and will not be shared with third parties.',
+          'We use the details you submit only to reply to your inquiry. Read how we handle them in our',
+        privacyLink: 'Privacy Policy',
         rateLimitError:
           'You are sending messages too frequently. Please wait a few minutes before trying again.',
       },
@@ -828,7 +836,7 @@ This article is for information only and does not constitute legal advice.`,
         title: 'Contact',
       },
       bottom: {
-        copyright: '© 2024 Trivunović Law Firm. All rights reserved.',
+        copyright: '© 2026 Trivunović Law Firm. All rights reserved.',
         privacy: 'Privacy Policy',
         terms: 'Terms of Service',
       },

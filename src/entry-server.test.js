@@ -107,6 +107,28 @@ describe('prerendered pages', () => {
     expect(html).not.toContain('**');
   });
 
+  test.each([
+    ['sr', 'politika-privatnosti/index.html', '/politika-privatnosti/', '/en/privacy-policy/'],
+    ['en', 'en/privacy-policy/index.html', '/en/privacy-policy/', '/politika-privatnosti/'],
+  ])('%s privacy policy page', (lang, file, path, otherPath) => {
+    const { privacy } = translations[lang];
+    const other = lang === 'sr' ? 'en' : 'sr';
+    const html = files[file];
+
+    expect(html).toBeDefined();
+    expect(html).toMatch(new RegExp(`<title[^>]*>${escapeRegex(escapeHtml(privacy.title))}`));
+    expect(html).toContain(escapeHtml(privacy.sections[0].heading));
+    expect(html).toMatch(new RegExp(`datetime="${privacy.isoDate}"`, 'i'));
+    expect(html).toContain('name="robots" content="index');
+    expect(canonicalOf(html)).toBe(`${SITE_URL}${path}`);
+    expect(hreflangOf(html, other)).toBe(`${SITE_URL}${otherPath}`);
+  });
+
+  test('footer and contact form link to the privacy policy in the page language', () => {
+    expect(files['index.html']).toContain('href="/politika-privatnosti/"');
+    expect(files['en/index.html']).toContain('href="/en/privacy-policy/"');
+  });
+
   test('404 page is not indexable and links home', () => {
     const html = files['404.html'];
     expect(html).toContain('name="robots" content="noindex');
@@ -124,12 +146,20 @@ describe('sitemap.xml', () => {
     expect(locs).toContain(`${SITE_URL}/en/`);
     sr.blog.articles.forEach((a) => expect(locs).toContain(`${SITE_URL}/blog/${a.slug}/`));
     en.blog.articles.forEach((a) => expect(locs).toContain(`${SITE_URL}/en/blog/${a.slug}/`));
-    expect(locs).toHaveLength(2 + sr.blog.articles.length + en.blog.articles.length);
+    expect(locs).toContain(`${SITE_URL}/politika-privatnosti/`);
+    expect(locs).toContain(`${SITE_URL}/en/privacy-policy/`);
+    expect(locs).toHaveLength(4 + sr.blog.articles.length + en.blog.articles.length);
     expect(xml).toContain(`hreflang="en" href="${SITE_URL}/en/"`);
   });
 
   test('articles carry their publication date as lastmod', () => {
     expect(xml).toContain(`<lastmod>${sr.blog.articles[0].isoDate}</lastmod>`);
+  });
+
+  test('privacy policy carries its last-updated date as lastmod', () => {
+    expect(xml).toMatch(
+      new RegExp(`/politika-privatnosti/</loc>\\s*<lastmod>${sr.privacy.isoDate}</lastmod>`)
+    );
   });
 });
 

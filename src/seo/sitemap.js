@@ -2,10 +2,11 @@ import { translations } from '../data/content';
 import { DEFAULT_LANGUAGE } from '../context/language';
 import { PAGE, absoluteUrl, alternatePaths } from '../routing/routes';
 
-const lastModified = (route) =>
-  route.page === PAGE.ARTICLE
-    ? translations[route.lang].blog.articles[route.articleIndex].isoDate
-    : null;
+const lastModified = ({ lang, page, articleIndex }) => {
+  if (page === PAGE.ARTICLE) return translations[lang].blog.articles[articleIndex].isoDate;
+  if (page === PAGE.PRIVACY) return translations[lang].privacy.isoDate;
+  return null;
+};
 
 const alternateLinks = (route) => {
   const alternates = alternatePaths(route);
