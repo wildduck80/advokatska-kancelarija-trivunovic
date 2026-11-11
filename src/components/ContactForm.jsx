@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useLang } from '../context/useLang';
+import { privacyPath } from '../routing/routes';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Rate limiting: Track last submission time
@@ -8,7 +9,7 @@ const RATE_LIMIT_MS = 60000; // 1 minute between submissions
 let lastSubmissionTime = 0;
 
 const ContactForm = () => {
-  const { t } = useLang();
+  const { lang, t } = useLang();
   const form = useRef();
   const [status, setStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -165,7 +166,10 @@ const ContactForm = () => {
 
             {/* Privacy Notice */}
             <div className="privacy-notice">
-              <p>{t.contact.form.privacyNotice}</p>
+              <p>
+                {t.contact.form.privacyNotice}{' '}
+                <a href={privacyPath(lang)}>{t.contact.form.privacyLink}</a>.
+              </p>
             </div>
 
             <div className="form-actions">

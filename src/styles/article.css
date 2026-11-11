@@ -168,3 +168,14 @@
     padding: 25px;
   }
 }
+
+/* --- PRIVACY POLICY (/politika-privatnosti/, /en/privacy-policy/) --- */
+.privacy-section {
+  margin-top: 36px;
+}
+
+.privacy-section h2 {
+  margin-bottom: 14px;
+  color: var(--primary);
+  font-size: 1.5rem;
+}

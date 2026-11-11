@@ -1,8 +1,9 @@
 import React from 'react';
 import { useLang } from '../context/useLang';
+import { privacyPath } from '../routing/routes';
 
 const Footer = () => {
-  const { t, homeHref } = useLang();
+  const { lang, t, homeHref } = useLang();
 
   return (
     <footer id="contact" className="footer">
@@ -99,7 +100,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <p className="footer-copyright">{t.footer.bottom.copyright}</p>
           <div className="footer-bottom-links">
-            <a href="#">{t.footer.bottom.privacy}</a>
+            <a href={privacyPath(lang)}>{t.footer.bottom.privacy}</a>
             <span className="separator">|</span>
             <a href="#">{t.footer.bottom.terms}</a>
           </div>

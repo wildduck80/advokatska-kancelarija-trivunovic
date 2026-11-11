@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ArticlePage from './pages/ArticlePage';
+import PrivacyPage from './pages/PrivacyPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { LanguageProvider } from './context/LanguageContext';
 import { otherLanguage } from './context/language';
@@ -15,6 +16,7 @@ const renderPage = (route, path, alternates) => {
   if (route.page === PAGE.ARTICLE) {
     return <ArticlePage articleIndex={route.articleIndex} path={path} alternates={alternates} />;
   }
+  if (route.page === PAGE.PRIVACY) return <PrivacyPage path={path} alternates={alternates} />;
   return <NotFoundPage />;
 };
 
