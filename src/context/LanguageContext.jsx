@@ -1,45 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { translations } from '../data/content';
 import { LanguageContext } from './language-context';
-import {
-  buildLanguageUrl,
-  readStoredLanguage,
-  resolveInitialLanguage,
-  toHtmlLang,
-  writeStoredLanguage,
-} from './language';
+import { homePath } from '../routing/routes';
 
-const getInitialLanguage = () => {
-  if (typeof window === 'undefined') return resolveInitialLanguage();
-  return resolveInitialLanguage({
-    search: window.location.search,
-    storedLanguage: readStoredLanguage(window.localStorage),
-  });
-};
-
-export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState(getInitialLanguage);
-
-  const t = translations[lang];
-
-  useEffect(() => {
-    document.documentElement.lang = toHtmlLang(lang);
-    writeStoredLanguage(window.localStorage, lang);
-
-    // Keep the address bar on the same URL search engines index for this language.
-    const nextUrl = buildLanguageUrl(window.location.href, lang);
-    if (nextUrl !== window.location.href) {
-      window.history.replaceState(window.history.state, '', nextUrl);
-    }
-  }, [lang]);
-
-  const toggleLanguage = () => {
-    setLang((prev) => (prev === 'sr' ? 'en' : 'sr'));
+/**
+ * The language comes from the URL (see routing/routes.js), so it is fixed for the
+ * lifetime of a page; switching language is a link to the translated page.
+ */
+export const LanguageProvider = ({ lang, switchLanguageHref, children }) => {
+  const value = {
+    lang,
+    t: translations[lang],
+    homeHref: homePath(lang),
+    switchLanguageHref,
   };
 
-  return (
-    <LanguageContext.Provider value={{ lang, t, toggleLanguage }}>
-      {children}
-    </LanguageContext.Provider>
-  );
+  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 };

@@ -142,16 +142,10 @@ Write articles about:
 - Partnerships with other businesses
 - Sponsorships (local events, sports clubs)
 
-### 6. **Update Sitemap After Changes**
-When you add blog posts or pages, update `public/sitemap.xml`:
-```xml
-<url>
-  <loc>https://trifunovic-law.com/blog/article-name</loc>
-  <lastmod>2025-12-21</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-```
+### 6. **Sitemap Is Generated Automatically**
+`sitemap.xml` is built from `src/data/content.js` on every `npm run build` (see
+`src/seo/sitemap.js`). Adding an article to `content.js` adds its pages and sitemap
+entries; there is nothing to edit by hand.
 
 ### 7. **Submit to Search Engines**
 - Google Search Console: [search.google.com/search-console](https://search.google.com/search-console)
@@ -162,14 +156,13 @@ When you add blog posts or pages, update `public/sitemap.xml`:
 
 ## 🔧 Configuration Required
 
-### Update Domain in SEO Component
-Open `src/components/SEO.jsx` and change:
-```javascript
-const siteUrl = 'https://trifunovic-law.com'; // Replace with your actual domain
-```
+### Domain
+The domain, office coordinates and address live in `src/data/site.js`
+(`SITE_URL = 'https://trivunovic-law.rs'`). `public/robots.txt` also contains the
+sitemap URL and must be changed by hand if the domain changes.
 
 ### Add Social Media Links
-When you create social profiles, add them to `organizationSchema`:
+When you create social profiles, add a `sameAs` array to `buildOrganizationSchema` in `src/seo/schemas.js`:
 ```javascript
 "sameAs": [
   "https://www.facebook.com/trivunoviclaw",

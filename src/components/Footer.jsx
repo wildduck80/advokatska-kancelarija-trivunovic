@@ -2,14 +2,7 @@ import React from 'react';
 import { useLang } from '../context/useLang';
 
 const Footer = () => {
-  const { t } = useLang();
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const { t, homeHref } = useLang();
 
   return (
     <footer id="contact" className="footer">
@@ -18,7 +11,7 @@ const Footer = () => {
           {/* About Column */}
           <div className="footer-column">
             <h3 className="footer-logo">
-              Trivunovic <span>Advokatska Kancelarija</span>
+              Trivunović <span>Advokatska Kancelarija</span>
             </h3>
             <p className="footer-about">{t.footer.about.text}</p>
             <div className="footer-social">
@@ -33,59 +26,19 @@ const Footer = () => {
             <h4 className="footer-heading">{t.footer.quickLinks.title}</h4>
             <ul className="footer-links">
               <li>
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                >
-                  {t.nav.home}
-                </a>
+                <a href={homeHref}>{t.nav.home}</a>
               </li>
               <li>
-                <a
-                  href="#services"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('services');
-                  }}
-                >
-                  {t.nav.services}
-                </a>
+                <a href={`${homeHref}#services`}>{t.nav.services}</a>
               </li>
               <li>
-                <a
-                  href="#team"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('team');
-                  }}
-                >
-                  {t.nav.team}
-                </a>
+                <a href={`${homeHref}#team`}>{t.nav.team}</a>
               </li>
               <li>
-                <a
-                  href="#faq"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('faq');
-                  }}
-                >
-                  {t.nav.faq}
-                </a>
+                <a href={`${homeHref}#faq`}>{t.nav.faq}</a>
               </li>
               <li>
-                <a
-                  href="#contact-form"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection('contact-form');
-                  }}
-                >
-                  {t.nav.contact}
-                </a>
+                <a href={`${homeHref}#contact-form`}>{t.nav.contact}</a>
               </li>
             </ul>
           </div>
@@ -96,15 +49,7 @@ const Footer = () => {
             <ul className="footer-links">
               {t.footer.practiceAreas.areas.map((area, index) => (
                 <li key={index}>
-                  <a
-                    href="#services"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection('services');
-                    }}
-                  >
-                    {area}
-                  </a>
+                  <a href={`${homeHref}#services`}>{area}</a>
                 </li>
               ))}
             </ul>

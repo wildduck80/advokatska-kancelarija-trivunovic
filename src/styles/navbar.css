@@ -57,6 +57,8 @@
   font-size: 1.5rem;
   transition: var(--transition);
   line-height: 1;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .lang-btn:hover {

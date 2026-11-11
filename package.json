@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run build:client && npm run build:server && node scripts/prerender.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,css}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,css}\"",
-    "test": "vitest run"
+    "test": "vitest run",
+    "build:client": "vite build",
+    "build:server": "vite build --ssr src/entry-server.jsx --outDir dist-ssr"
   },
   "dependencies": {
     "@dr.pogodin/react-helmet": "^3.0.5",

@@ -3,8 +3,23 @@
 
 export const translations = {
   sr: {
+    seo: {
+      title: 'Advokatska Kancelarija Trivunović - Advokat Futog | Pravne Usluge',
+      description:
+        'Advokatska kancelarija Trivunović u Futogu pruža profesionalne pravne usluge. Iskusni advokati za građansko, krivično, porodično i radno pravo. Zakažite besplatnu konsultaciju.',
+      organizationDescription:
+        'Advokatska kancelarija Trivunović pruža vrhunske pravne usluge u Futogu. Specijalizovani smo za građansko, krivično, porodično i radno pravo.',
+    },
+
+    notFound: {
+      title: 'Stranica nije pronađena',
+      text: 'Stranica koju tražite ne postoji ili je premeštena.',
+      backHome: 'Nazad na početnu',
+    },
+
     // Navigation
     nav: {
+      skipToContent: 'Preskoči na sadržaj',
       home: 'Početna',
       about: 'O Nama',
       services: 'Usluge',
@@ -162,10 +177,14 @@ export const translations = {
       heading: 'Pravne Novosti i Saveti',
       subheading: 'Budite informisani o promenama u zakonodavstvu',
       readMore: 'Pročitajte više',
-      closeModal: 'Zatvori',
+      backToBlog: 'Sve pravne novosti',
+      moreArticles: 'Pročitajte i',
+      ctaHeading: 'Potreban vam je pravni savet?',
+      ctaText: 'Zakažite konsultacije sa našim timom i dobićete odgovor u najkraćem roku.',
       imageAlt: 'Pravni članak o temi',
       articles: [
         {
+          slug: 'istekao-rok-svoj-na-svome',
           title: 'Istekao Rok za Upis po Zakonu „Svoj na Svome": Šta Sada?',
           excerpt:
             'Naknadni rok za prijavu bespravno izgrađenih objekata istekao je 24. oktobra 2026. Objašnjavamo šta to znači za vlasnike i kupce nekretnina.',
@@ -202,6 +221,7 @@ Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
           img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800',
         },
         {
+          slug: 'novi-zakon-o-zastiti-potrosaca-reklamacije',
           title: 'Novi Zakon o Zaštiti Potrošača: Nova Pravila za Reklamacije',
           excerpt:
             'Od 2. avgusta 2026. primenjuju se nova pravila za reklamacije. Šta se promenilo za kupce, a šta za trgovce?',
@@ -243,6 +263,7 @@ Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
           img: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800',
         },
         {
+          slug: 'ebolovanje-obavezno-za-preduzetnike-2027',
           title: 'eBolovanje: Obavezno i za Preduzetnike od 1. Januara 2027.',
           excerpt:
             'Papirne doznake su prošlost. Preduzetnici koji imaju zaposlene moraju da se uključe u sistem eBolovanje do početka 2027. godine.',
@@ -407,8 +428,23 @@ Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
 
   // ENGLISH VERSION
   en: {
+    seo: {
+      title: 'Trivunović Law Firm - Lawyer Futog | Legal Services',
+      description:
+        'Trivunović Law Firm in Futog provides professional legal services. Experienced lawyers for civil, criminal, family and labor law. Schedule a free consultation.',
+      organizationDescription:
+        'Trivunović Law Firm provides top-quality legal services in Futog. We specialize in civil, criminal, family, and labor law.',
+    },
+
+    notFound: {
+      title: 'Page not found',
+      text: 'The page you are looking for does not exist or has been moved.',
+      backHome: 'Back to home page',
+    },
+
     // Navigation
     nav: {
+      skipToContent: 'Skip to content',
       home: 'Home',
       about: 'About Us',
       services: 'Services',
@@ -421,7 +457,7 @@ Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
 
     // Company Information
     company: {
-      name: 'Trivunovic Law Firm',
+      name: 'Trivunović Law Firm',
       tagline: 'Your partner in legal security',
       address: 'Rade Kondica 116a, 21410 Futog',
       city: 'Futog, Novi Sad',
@@ -448,7 +484,7 @@ Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
       subheading: 'Tradition, Experience and Dedication',
       foundedText: 'Established',
       description: [
-        'Trivunovic Law Firm was founded in 2010 with a vision of providing top-tier legal services based on ethical principles and expertise. Over the years, we have built a reputation as a trusted partner in resolving the most complex legal matters.',
+        'Trivunović Law Firm was founded in 2010 with a vision of providing top-tier legal services based on ethical principles and expertise. Over the years, we have built a reputation as a trusted partner in resolving the most complex legal matters.',
         'Our team consists of highly qualified attorneys with extensive experience across various areas of law. We provide legal support to individuals, businesses, and institutions throughout Serbia, with a special focus on the Vojvodina region.',
         'We believe in a personalized approach to each client. Our work philosophy is based on transparency, rapid communication, and proactive resolution of legal problems before they escalate into disputes.',
       ],
@@ -566,10 +602,14 @@ Tekst je informativnog karaktera i ne predstavlja pravni savet.`,
       heading: 'Legal News & Advice',
       subheading: 'Stay informed about changes in legislation',
       readMore: 'Read More',
-      closeModal: 'Close',
+      backToBlog: 'All legal news',
+      moreArticles: 'More articles',
+      ctaHeading: 'Need legal advice?',
+      ctaText: 'Book a consultation with our team and we will get back to you as soon as possible.',
       imageAlt: 'Legal article about',
       articles: [
         {
+          slug: 'svoj-na-svome-registration-deadline-passed',
           title: 'The "Svoj na Svome" Registration Deadline Has Passed: What Now?',
           excerpt:
             'The extended deadline for registering unpermitted buildings expired on 24 October 2026. Here is what it means for owners and buyers.',
@@ -606,6 +646,7 @@ This article is for information only and does not constitute legal advice.`,
           img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800',
         },
         {
+          slug: 'new-consumer-protection-law-complaints',
           title: 'New Consumer Protection Law: New Rules for Complaints',
           excerpt:
             'New rules for complaints about defective goods apply from 2 August 2026. What has changed for buyers and for traders?',
@@ -647,6 +688,7 @@ This article is for information only and does not constitute legal advice.`,
           img: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800',
         },
         {
+          slug: 'ebolovanje-mandatory-for-sole-traders-2027',
           title: 'eBolovanje: Mandatory for Sole Traders from 1 January 2027',
           excerpt:
             'Paper sick notes are a thing of the past. Sole traders with employees must join the eBolovanje system by the start of 2027.',
@@ -772,7 +814,7 @@ This article is for information only and does not constitute legal advice.`,
     footer: {
       about: {
         title: 'About the Firm',
-        text: 'Trivunovic Law Firm has been providing the highest quality legal services since 2010. Our mission is to protect the rights and interests of clients through professional, ethical, and efficient work.',
+        text: 'Trivunović Law Firm has been providing the highest quality legal services since 2010. Our mission is to protect the rights and interests of clients through professional, ethical, and efficient work.',
       },
       quickLinks: {
         title: 'Quick Links',
@@ -786,7 +828,7 @@ This article is for information only and does not constitute legal advice.`,
         title: 'Contact',
       },
       bottom: {
-        copyright: '© 2024 Trivunovic Law Firm. All rights reserved.',
+        copyright: '© 2024 Trivunović Law Firm. All rights reserved.',
         privacy: 'Privacy Policy',
         terms: 'Terms of Service',
       },
