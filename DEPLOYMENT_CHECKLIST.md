@@ -10,9 +10,8 @@ Complete these tasks before deploying your law firm website to production.
 - [ ] Verify email delivery
 
 ### 2. Domain & URLs
-- [ ] Update domain in `src/components/SEO.jsx` (line 7)
-- [ ] Update all URLs in `public/sitemap.xml`
-- [ ] Update sitemap URL in `public/robots.txt`
+- [x] Domain set in `src/data/site.js` (`https://trivunovic-law.rs`); `sitemap.xml` is generated from it at build time
+- [x] Sitemap URL in `public/robots.txt` (update by hand if the domain changes)
 
 ### 3. Images & Assets
 - [ ] Create Open Graph image (1200x630px) → save as `public/og-image.jpg`
@@ -24,7 +23,7 @@ Complete these tasks before deploying your law firm website to production.
 - [ ] Review all Serbian translations
 - [ ] Review all English translations
 - [ ] Verify phone number format: `+381 21 xxx xxx`
-- [ ] Verify email address: `info@trifunovic-law.com`
+- [ ] Verify email address: `office@trivunovic-law.rs`
 - [ ] Verify office address: `Rade Kondića 116a, 21410 Futog`
 - [ ] Verify working hours in content.js
 
@@ -51,7 +50,7 @@ Complete these tasks before deploying your law firm website to production.
 - [ ] Create Facebook Business Page
 - [ ] Create LinkedIn Company Page
 - [ ] Create Instagram Business Account
-- [ ] Add social links to `src/components/SEO.jsx` (organizationSchema.sameAs)
+- [ ] Add social links as `sameAs` in `buildOrganizationSchema` (`src/seo/schemas.js`)
 - [ ] Add social media links to Footer component
 
 ### 8. Analytics & Tracking
@@ -171,7 +170,7 @@ Complete these tasks before deploying your law firm website to production.
 
 **3. Traditional Hosting (cPanel, etc.)**
 - Upload `dist` folder after `npm run build`
-- Configure web server to serve index.html for all routes
+- Every page is prerendered to its own `index.html` (e.g. `dist/en/blog/<slug>/index.html`); serve `dist/404.html` for unknown paths and redirect paths without a trailing slash to the slash version (see `vercel.json`)
 - Manually set up HTTPS
 - More technical setup required
 

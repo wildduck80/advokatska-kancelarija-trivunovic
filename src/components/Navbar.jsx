@@ -1,70 +1,60 @@
 import React, { useState } from 'react';
 import { useLang } from '../context/useLang';
+import { otherLanguage } from '../context/language';
+
+const SECTION_LINKS = [
+  { id: 'about', key: 'about' },
+  { id: 'services', key: 'services' },
+  { id: 'team', key: 'team' },
+  { id: 'contact-form', key: 'contact' },
+  { id: 'blog', key: 'blog' },
+];
 
 const Navbar = () => {
-  const { lang, t, toggleLanguage } = useLang();
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // New state for mobile menu
+  const { lang, t, homeHref, switchLanguageHref } = useLang();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const switchTo = otherLanguage(lang);
+  const switchLabel = lang === 'sr' ? 'Switch to English' : 'Prebaci na srpski';
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen((open) => !open);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <nav className="navbar">
       <div className="container nav-flex">
-        {/* Fixed Logo Logic */}
-        <div className="logo">
-          Trivunovic <span>Advokatska Kancelarija</span>
-        </div>
+        <a href={homeHref} className="logo">
+          Trivunović <span>Advokatska Kancelarija</span>
+        </a>
 
-        {/* Links now have 'active' class and 'closeMenu' handler */}
+        {/* Section links are prefixed with the home path so they also work from article pages. */}
         <ul id="primary-nav" className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <li>
-            <a href="#" onClick={closeMenu}>
+            <a href={homeHref} onClick={closeMenu}>
               {t.nav.home}
             </a>
           </li>
-          <li>
-            <a href="#about" onClick={closeMenu}>
-              {t.nav.about}
-            </a>
-          </li>
-          <li>
-            <a href="#services" onClick={closeMenu}>
-              {t.nav.services}
-            </a>
-          </li>
-          <li>
-            <a href="#team" onClick={closeMenu}>
-              {t.nav.team}
-            </a>
-          </li>
-          <li>
-            <a href="#contact-form" onClick={closeMenu}>
-              {t.nav.contact}
-            </a>
-          </li>
-          <li>
-            <a href="#blog" onClick={closeMenu}>
-              {t.nav.blog}
-            </a>
-          </li>
+          {SECTION_LINKS.map(({ id, key }) => (
+            <li key={id}>
+              <a href={`${homeHref}#${id}`} onClick={closeMenu}>
+                {t.nav[key]}
+              </a>
+            </li>
+          ))}
 
-          {/* Language Toggle - visible in both desktop and mobile menu */}
           <li>
-            <button
-              type="button"
-              onClick={toggleLanguage}
+            <a
+              href={switchLanguageHref}
+              hrefLang={switchTo}
               className="lang-btn"
-              aria-label={lang === 'sr' ? 'Switch to English' : 'Prebaci na srpski'}
-              title={lang === 'sr' ? 'Switch to English' : 'Prebaci na srpski'}
+              aria-label={switchLabel}
+              title={switchLabel}
             >
               <span aria-hidden="true">{lang === 'sr' ? '🇬🇧' : '🇷🇸'}</span>
-            </button>
+            </a>
           </li>
         </ul>
 
         <div className="nav-controls">
-          {/* Hamburger Icon */}
           <button
             type="button"
             className="mobile-menu-icon"

@@ -1,22 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLang } from '../context/useLang';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import ArticleModal from './ArticleModal';
+import { articlePath } from '../routing/routes';
 
 const Blog = () => {
-  const { t } = useLang();
+  const { lang, t } = useLang();
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
-  const [selectedArticle, setSelectedArticle] = useState(null);
-
-  const handleReadMore = (e, article) => {
-    e.preventDefault();
-    setSelectedArticle(article);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedArticle(null);
-  };
 
   return (
     <section id="blog" className="blog-section">
@@ -33,8 +23,8 @@ const Blog = () => {
           ref={gridRef}
           className={`blog-grid stagger-animation ${gridVisible ? 'visible' : ''}`}
         >
-          {t.blog.articles.map((article, index) => (
-            <article key={index} className="blog-card">
+          {t.blog.articles.map((article) => (
+            <article key={article.slug} className="blog-card">
               <div className="blog-image">
                 <img
                   src={article.img}
@@ -50,20 +40,18 @@ const Blog = () => {
                 <span className="blog-date">{article.date}</span>
                 <h3>{article.title}</h3>
                 <p>{article.excerpt}</p>
-                <button className="read-more" onClick={(e) => handleReadMore(e, article)}>
+                <a
+                  href={articlePath(lang, article.slug)}
+                  className="read-more"
+                  aria-label={`${t.blog.readMore}: ${article.title}`}
+                >
                   {t.blog.readMore} <span className="arrow">→</span>
-                </button>
+                </a>
               </div>
             </article>
           ))}
         </div>
       </div>
-
-      <ArticleModal
-        article={selectedArticle}
-        isOpen={selectedArticle !== null}
-        onClose={handleCloseModal}
-      />
     </section>
   );
 };

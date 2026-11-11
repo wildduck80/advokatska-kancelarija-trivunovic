@@ -1,237 +1,84 @@
-# Language Handling Documentation
+# Languages, URLs and Prerendering
 
-## Overview
+The site is bilingual (Serbian default, English). Every page in every language has its own
+URL and is prerendered to static HTML at build time, so search engines and social-media
+previews see the full content without running JavaScript.
 
-The website supports **bilingual content** (Serbian and English) with proper SEO implementation and user preference persistence.
+## URLs
 
-## Language Codes
+| Page | Serbian | English |
+|---|---|---|
+| Home | `/` | `/en/` |
+| Article | `/blog/<sr-slug>/` | `/en/blog/<en-slug>/` |
+| Not found | `404.html` (Serbian, `noindex`) | — |
 
-- **Serbian (Default)**: `sr-Latn-RS`
-  - `sr` = Serbian language
-  - `Latn` = Latin script (not Cyrillic)
-  - `RS` = Serbia country code
+- The URL is the only source of the language. There is no `localStorage` preference and no
+  automatic redirect; the flag in the navbar links to the same page in the other language.
+- URLs end with a slash. Vercel redirects `/en` → `/en/` (`"trailingSlash": true` in
+  `vercel.json`).
+- Old `/?lang=en` links (used briefly before path-based URLs) redirect permanently to `/en/`.
+- Section links (`#about`, `#contact-form`, ...) are written as `<home path>#section`, so they
+  also work from article pages.
 
-- **English**: `en`
+All of this lives in `src/routing/routes.js` (`resolveRoute`, `homePath`, `articlePath`,
+`alternatePaths`, `getPrerenderRoutes`) and is unit-tested in `routes.test.js`.
 
-## Implementation Details
+## Language codes
 
-### 1. Language Context (`src/context/LanguageContext.jsx`)
+- Serbian: `sr-Latn-RS` (Latin script) in `<html lang>`, `sr` in hreflang and URLs
+- English: `en`
 
-**Features:**
-- ✅ Reads initial language from localStorage
-- ✅ Defaults to Serbian (`sr`) if no preference saved
-- ✅ Updates `<html lang>` attribute when language changes
-- ✅ Persists language preference to localStorage
-- ✅ Provides translations via `t` object
-- ✅ Exposes `toggleLanguage()` function
+`src/context/language.js` holds the supported languages and the `<html lang>` mapping.
 
-**How It Works:**
-```javascript
-// On mount: Read from localStorage or default to 'sr'
-const savedLang = localStorage.getItem('preferredLanguage') || 'sr';
+## Content
 
-// When language changes:
-useEffect(() => {
-  // Update HTML lang attribute
-  document.documentElement.lang = lang === 'sr' ? 'sr-Latn-RS' : 'en';
+All copy is in `src/data/content.js` under `translations.sr` and `translations.en`, which
+must stay structurally identical. Blog articles are paired **by array position**: the
+first Serbian article is the translation of the first English article, and so on. Each has
+its own `slug` (lowercase, digits and hyphens). Tests in `src/data/content.test.js` enforce
+matching counts, dates, images and URL-safe unique slugs.
 
-  // Save to localStorage
-  localStorage.setItem('preferredLanguage', lang);
-}, [lang]);
+To add an article: add an object with the same fields to **both** `articles` arrays at the
+same position. Its pages, hreflang links, structured data and sitemap entries are generated
+automatically on the next build.
+
+## How rendering works
+
+```
+npm run build
+  ├─ build:client   vite build                     → dist/ (JS, CSS, index.html template)
+  ├─ build:server   vite build --ssr entry-server  → dist-ssr/ (temporary)
+  └─ scripts/prerender.js
+       for every route in getPrerenderRoutes():
+         renderToString(<App route={...} />)  + Helmet head tags
+         → dist/<path>/index.html
+       → dist/404.html, dist/sitemap.xml
 ```
 
-### 2. SEO Component (`src/components/SEO.jsx`)
+- `src/entry-server.jsx` renders a route and injects the HTML and head tags into the
+  `<!--app-head-->` / `<!--app-html-->` placeholders in `index.html`.
+- `src/entry-client.jsx` resolves the route from `window.location.pathname` and hydrates the
+  prerendered HTML. In `npm run dev` there is no prerendered HTML, so it renders from scratch.
+- Head tags (title, description, canonical, hreflang, Open Graph, JSON-LD) come from
+  `src/components/SEO.jsx`; the JSON-LD builders are in `src/seo/schemas.js`.
 
-The SEO component uses react-helmet-async to dynamically set the `<html lang>` attribute:
+Because pages are hydrated, the first client render must match the server render. Do not
+read `window`, `localStorage` or the current time during render; do it in an effect.
 
-```javascript
-<Helmet>
-  <html lang={lang === 'sr' ? 'sr-Latn-RS' : 'en'} />
-  {/* Other meta tags... */}
-</Helmet>
-```
+## SEO per page
 
-**Benefits:**
-- Proper language declaration for search engines
-- Accessibility (screen readers use correct pronunciation)
-- SEO signals (Google knows content language)
+| | Home | Article | 404 |
+|---|---|---|---|
+| `<link rel="canonical">` | own URL | own URL | none |
+| hreflang `sr` / `en` / `x-default` | yes | yes (paired article) | none |
+| `robots` | `index, follow` | `index, follow` | `noindex, follow` |
+| `og:type` | `website` | `article` | `website` |
+| JSON-LD | LegalService, Attorney, Service, Person, FAQPage | Article | none |
 
-### 3. Default Language (`index.html`)
+## Testing
 
-```html
-<html lang="sr-Latn-RS">
-```
-
-This is the initial server-rendered language before React hydrates. It matches the default language in LanguageContext.
-
-### 4. Language Toggle (`src/components/Navbar.jsx`)
-
-The navbar has flag buttons that toggle between languages:
-
-```javascript
-<button onClick={toggleLanguage} className="lang-btn">
-  {lang === 'sr' ? '🇬🇧' : '🇷🇸'}
-</button>
-```
-
-- **Serbian (active)**: Shows 🇬🇧 (click to switch to English)
-- **English (active)**: Shows 🇷🇸 (click to switch to Serbian)
-
-## User Experience Flow
-
-### First Visit:
-1. User lands on site → Default language: **Serbian** (`sr-Latn-RS`)
-2. `<html lang="sr-Latn-RS">` is set
-3. All content displays in Serbian
-
-### Language Toggle:
-1. User clicks flag button in navbar
-2. `toggleLanguage()` called → switches `sr` ↔ `en`
-3. `useEffect` triggers:
-   - Updates `document.documentElement.lang`
-   - Saves to `localStorage.setItem('preferredLanguage', 'en')`
-4. All content re-renders in English
-5. SEO meta tags update (title, description, og:locale, etc.)
-
-### Return Visit:
-1. User returns to site
-2. `getInitialLanguage()` reads from localStorage
-3. Last selected language is restored
-4. Content displays in user's preferred language
-
-## SEO Benefits
-
-### 1. **Hreflang Tags**
-```html
-<link rel="alternate" hreflang="sr" href="https://site.com/?lang=sr"/>
-<link rel="alternate" hreflang="en" href="https://site.com/?lang=en"/>
-<link rel="alternate" hreflang="x-default" href="https://site.com/"/>
-```
-
-Tells Google:
-- Serbian version exists at `?lang=sr`
-- English version exists at `?lang=en`
-- Default (no preference) shows Serbian
-
-### 2. **Open Graph Locale**
-```html
-<meta property="og:locale" content="sr_RS" />
-<!-- or -->
-<meta property="og:locale" content="en_US" />
-```
-
-Social media platforms (Facebook, LinkedIn) show correct language version when shared.
-
-### 3. **Dynamic Meta Tags**
-All SEO tags change with language:
-- Title: "Advokatska Kancelarija..." (SR) vs "Law Firm..." (EN)
-- Description: Different for each language
-- Keywords: Localized keywords
-
-## Testing Language Handling
-
-### Test 1: Default Language
-1. Open site in incognito/private mode
-2. Verify page is in Serbian
-3. Check `document.documentElement.lang` in console → should be `"sr-Latn-RS"`
-
-### Test 2: Language Toggle
-1. Click flag button in navbar
-2. Verify all content switches to English
-3. Check `document.documentElement.lang` → should be `"en"`
-4. Check localStorage: `localStorage.getItem('preferredLanguage')` → should be `"en"`
-
-### Test 3: Language Persistence
-1. Switch to English
-2. Refresh page (F5)
-3. Verify page stays in English
-4. Close browser and reopen
-5. Navigate to site → should still be English
-
-### Test 4: SEO Tags
-1. Switch language
-2. View page source or inspect `<head>`
-3. Verify:
-   - `<html lang>` attribute changes
-   - `<title>` changes
-   - `<meta name="description">` changes
-   - `<meta property="og:locale">` changes
-
-## localStorage Structure
-
-```javascript
-// Key
-"preferredLanguage"
-
-// Values
-"sr" // Serbian
-"en" // English
-```
-
-**Note**: If key doesn't exist, defaults to `"sr"`.
-
-## Accessibility
-
-Proper `lang` attribute helps:
-- **Screen readers**: Pronounce text correctly
-- **Translation tools**: Auto-detect language
-- **Search engines**: Understand content language
-- **Browser features**: Spell-check in correct language
-
-## Common Issues & Solutions
-
-### Issue: Language resets on refresh
-**Cause**: localStorage not being set
-**Fix**: Check browser console for errors in LanguageContext
-
-### Issue: SEO tags not updating
-**Cause**: react-helmet-async not working
-**Fix**: Verify HelmetProvider wraps App in main.jsx
-
-### Issue: Wrong language shows first, then switches
-**Cause**: React hydration delay
-**Fix**: This is normal - initial HTML is Serbian, then React reads localStorage and may switch
-
-### Issue: Search engines indexing wrong language
-**Cause**: Hreflang tags incorrect
-**Fix**: Verify sitemap.xml has proper language variants
-
-## Future Enhancements
-
-### Option 1: URL-based language (/en, /sr)
-Currently using state/localStorage. Could use:
-- `example.com/` → Serbian
-- `example.com/en/` → English
-
-Requires React Router and URL structure changes.
-
-### Option 2: Auto-detect browser language
-```javascript
-const browserLang = navigator.language; // e.g., "sr-RS", "en-US"
-if (browserLang.startsWith('en')) {
-  // Default to English
-}
-```
-
-### Option 3: Add more languages
-Easy to add:
-1. Add translations to `src/data/content.js`
-2. Update language toggle to cycle through options
-3. Add new hreflang tags
-
-## Related Files
-
-- `src/context/LanguageContext.jsx` - Core language logic
-- `src/components/SEO.jsx` - SEO meta tags
-- `src/components/Navbar.jsx` - Language toggle button
-- `src/data/content.js` - All translations
-- `index.html` - Default HTML lang attribute
-- `src/main.jsx` - HelmetProvider setup
-
----
-
-**Language handling is now complete with:**
-✅ localStorage persistence
-✅ Dynamic `<html lang>` updates
-✅ Proper SEO implementation
-✅ Consistent default language (Serbian)
+- `npm test` runs `src/entry-server.test.js`, which prerenders every page in memory and
+  checks titles, canonical/hreflang links, JSON-LD, the 404 page and the sitemap.
+- After deploying, check pages with
+  [Google's Rich Results Test](https://search.google.com/test/rich-results) and submit
+  `https://trivunovic-law.rs/sitemap.xml` in Google Search Console.
